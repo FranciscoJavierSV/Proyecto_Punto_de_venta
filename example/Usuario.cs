@@ -16,5 +16,19 @@ namespace example
         {
             InitializeComponent();
         }
+
+        private void Salir_Usuario(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+                    }
     }
 }

@@ -16,5 +16,10 @@ namespace example
         {
             InitializeComponent();
         }
+
+        private void Salir_Admin(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

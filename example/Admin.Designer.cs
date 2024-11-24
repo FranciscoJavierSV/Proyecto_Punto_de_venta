@@ -85,6 +85,7 @@
             button1.TabIndex = 7;
             button1.Text = "Log Out";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += Salir_Admin;
             // 
             // label6
             // 

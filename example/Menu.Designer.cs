@@ -32,8 +32,8 @@
             label6 = new Label();
             label5 = new Label();
             button1 = new Button();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txt2 = new TextBox();
+            txt1 = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -49,8 +49,8 @@
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(txt2);
+            groupBox1.Controls.Add(txt1);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             groupBox1.Location = new Point(12, 12);
@@ -86,21 +86,22 @@
             button1.TabIndex = 3;
             button1.Text = "Log In";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += clic;
             // 
-            // textBox2
+            // txt2
             // 
-            textBox2.Location = new Point(114, 142);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(159, 34);
-            textBox2.TabIndex = 2;
-            textBox2.TextChanged += password;
+            txt2.Location = new Point(114, 142);
+            txt2.Name = "txt2";
+            txt2.Size = new Size(159, 34);
+            txt2.TabIndex = 2;
+            txt2.TextChanged += password;
             // 
-            // textBox1
+            // txt1
             // 
-            textBox1.Location = new Point(114, 74);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(159, 34);
-            textBox1.TabIndex = 1;
+            txt1.Location = new Point(114, 74);
+            txt1.Name = "txt1";
+            txt1.Size = new Size(159, 34);
+            txt1.TabIndex = 1;
             // 
             // label1
             // 
@@ -155,6 +156,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            ControlBox = false;
             Controls.Add(button2);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -180,8 +182,8 @@
         private Label label6;
         private Label label5;
         private Button button1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txt2;
+        private TextBox txt1;
         private Button button2;
     }
 }
