@@ -12,6 +12,9 @@ namespace example
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Pantalla_Inicio());
+        
+        
+        
         }
     }
 }

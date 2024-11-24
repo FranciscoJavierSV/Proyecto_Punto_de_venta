@@ -18,7 +18,12 @@ namespace example
         {
             InitializeComponent();
             Cambios();
-            
+           
+        }
+        private void gartic()
+        {
+
+
         }
 
         private void Siguiente(object sender, EventArgs e)
