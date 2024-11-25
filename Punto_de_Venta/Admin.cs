@@ -21,5 +21,10 @@ namespace example
         {
             this.Close();
         }
+
+        private void toolStripContainer1_BottomToolStripPanel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

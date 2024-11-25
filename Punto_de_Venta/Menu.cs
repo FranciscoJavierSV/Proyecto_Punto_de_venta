@@ -23,13 +23,19 @@ namespace example
             this.Close();
         }
 
-        private void password(object sender, EventArgs e)
-        {
-
-        }
-
         private void clic(object sender, EventArgs e)
         {
+            //Llamo al metodo
+            acceso();  
+        }
+
+        /// <summary>
+        /// Javier
+        /// Este metodo obtiene los datos de la base de datos de usuarios y comprueba que lo ingresado este dentro de ella
+        /// </summary>
+        private void acceso()
+        {
+            
             try
             {
                 // Variables con los valores a comprobar
@@ -65,7 +71,7 @@ namespace example
                 }
                 else
                 {
-                    if (usuarioIngresado=="Admin")
+                    if (usuarioIngresado == "Admin")
                     {
                         Admin Menu_Admin = new Admin();
                         Menu_Admin.FormClosed += Menu_cerrado;
@@ -88,12 +94,17 @@ namespace example
             }
         }
 
-
-
+        /// <summary>
+        /// Esto hace aparecer de nuevo el meno de ingreso
+        /// javi
+        /// </summary>
+        /// <param name="e"></param>
 
         private void Menu_cerrado(object sender, FormClosedEventArgs e)
         {
             this.Show();
+            txt1.Text = "";
+            txt2.Text = "";
         }
     }
 }

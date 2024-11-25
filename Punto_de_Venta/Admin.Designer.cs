@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
             label6 = new Label();
             label1 = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.BackColor = SystemColors.ButtonShadow;
             groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(button2);
@@ -103,15 +103,9 @@
             label1.Size = new Size(0, 28);
             label1.TabIndex = 0;
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Location = new Point(264, 12);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(524, 392);
-            flowLayoutPanel1.TabIndex = 3;
-            // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F);
             label2.Location = new Point(3, 419);
@@ -122,9 +116,10 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 15F);
-            label3.Location = new Point(197, 419);
+            label3.Location = new Point(182, 419);
             label3.Name = "label3";
             label3.Size = new Size(496, 28);
             label3.TabIndex = 7;
@@ -134,22 +129,22 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 15F);
-            label4.Location = new Point(693, 419);
+            label4.Location = new Point(676, 419);
             label4.Name = "label4";
-            label4.Size = new Size(112, 28);
+            label4.Size = new Size(78, 28);
             label4.TabIndex = 8;
-            label4.Text = "Hora de Tie";
+            label4.Text = "Tiempo";
             // 
             // Admin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(800, 450);
             ControlBox = false;
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(flowLayoutPanel1);
             Controls.Add(groupBox1);
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
@@ -157,6 +152,7 @@
             Name = "Admin";
             ShowIcon = false;
             Text = "Admin";
+            WindowState = FormWindowState.Maximized;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -171,9 +167,9 @@
         private Button button1;
         private Label label6;
         private Label label1;
-        private FlowLayoutPanel flowLayoutPanel1;
         private Label label2;
         private Label label3;
         private Label label4;
+        private System.Windows.Forms.Timer timer1;
     }
 }

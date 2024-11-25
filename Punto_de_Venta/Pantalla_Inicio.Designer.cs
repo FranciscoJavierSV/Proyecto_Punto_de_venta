@@ -31,11 +31,12 @@ namespace example
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
+            Tiempo = new Label();
             label5 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // label1
@@ -53,33 +54,22 @@ namespace example
             label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F);
-            label2.Location = new Point(3, 419);
+            label2.Location = new Point(12, 419);
             label2.Name = "label2";
             label2.Size = new Size(188, 28);
             label2.TabIndex = 1;
             label2.Text = "Controles de musica";
             // 
-            // label3
+            // Tiempo
             // 
-            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 15F);
-            label3.Location = new Point(197, 419);
-            label3.Name = "label3";
-            label3.Size = new Size(496, 28);
-            label3.TabIndex = 2;
-            label3.Text = "Eslogan........................................................................................................";
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 15F);
-            label4.Location = new Point(689, 419);
-            label4.Name = "label4";
-            label4.Size = new Size(112, 28);
-            label4.TabIndex = 3;
-            label4.Text = "Hora de Tie";
+            Tiempo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Tiempo.AutoSize = true;
+            Tiempo.Font = new Font("Segoe UI", 20F);
+            Tiempo.Location = new Point(681, 410);
+            Tiempo.Name = "Tiempo";
+            Tiempo.Size = new Size(107, 37);
+            Tiempo.TabIndex = 3;
+            Tiempo.Text = "Tiempo";
             // 
             // label5
             // 
@@ -92,14 +82,17 @@ namespace example
             label5.TabIndex = 4;
             label5.Text = "Presione para continuar";
             // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
             // Pantalla_Inicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
+            Controls.Add(Tiempo);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Pantalla_Inicio";
@@ -119,16 +112,15 @@ namespace example
             Font mia = new Font("Resources/Fonts/Mistral.ttf",15);
             label1.Font = custom;
             label2.Font = custom;
-            label3.Font = custom;
-            label4.Font = custom;
+            Tiempo.Font = custom;
             label5.Font = custom;
         }
 
         private Label label1;
         private Label label2;
-        private Label label3;
-        private Label label4;
+        private Label Tiempo;
         private Label label5;
         private Font custom;
+        private System.Windows.Forms.Timer timer1;
     }
 }

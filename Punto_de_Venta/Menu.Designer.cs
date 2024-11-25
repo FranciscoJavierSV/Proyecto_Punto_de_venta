@@ -94,7 +94,7 @@
             txt2.Name = "txt2";
             txt2.Size = new Size(159, 34);
             txt2.TabIndex = 2;
-            txt2.TextChanged += password;
+            txt2.UseSystemPasswordChar = true;
             // 
             // txt1
             // 

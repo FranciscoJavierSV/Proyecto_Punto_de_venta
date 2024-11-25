@@ -11,14 +11,13 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace example
 {
-    
+
     public partial class Pantalla_Inicio : Form
     {
         public Pantalla_Inicio()
         {
             InitializeComponent();
-            Cambios();
-           
+            timer1.Enabled = true;
         }
         private void gartic()
         {
@@ -33,13 +32,17 @@ namespace example
 
             this.Hide();
             Menu_Opciones.Show();
-            
+
         }
 
-        private void Menu_cerrado(object sender,FormClosedEventArgs e)
+        private void Menu_cerrado(object sender, FormClosedEventArgs e)
         {
             this.Show();
         }
-        
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Tiempo.Text = DateTime.Now.ToString("hh:mm:ss");
+        }
     }
 }

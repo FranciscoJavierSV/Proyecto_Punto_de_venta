@@ -185,6 +185,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.BackColor = SystemColors.ControlDarkDark;
             groupBox2.Location = new Point(3, 3);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(231, 257);
@@ -194,6 +195,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.BackColor = SystemColors.ControlDarkDark;
             groupBox3.Location = new Point(240, 3);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(231, 257);
@@ -203,6 +205,7 @@
             // 
             // groupBox4
             // 
+            groupBox4.BackColor = SystemColors.ControlDarkDark;
             groupBox4.Location = new Point(3, 266);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(231, 257);
@@ -212,6 +215,7 @@
             // 
             // groupBox6
             // 
+            groupBox6.BackColor = SystemColors.ControlDarkDark;
             groupBox6.Location = new Point(240, 266);
             groupBox6.Name = "groupBox6";
             groupBox6.Size = new Size(231, 257);
@@ -221,6 +225,7 @@
             // 
             // groupBox5
             // 
+            groupBox5.BackColor = SystemColors.ControlDarkDark;
             groupBox5.Location = new Point(3, 529);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(231, 257);
@@ -230,6 +235,7 @@
             // 
             // groupBox7
             // 
+            groupBox7.BackColor = SystemColors.ControlDarkDark;
             groupBox7.Location = new Point(240, 529);
             groupBox7.Name = "groupBox7";
             groupBox7.Size = new Size(231, 257);
@@ -239,6 +245,7 @@
             // 
             // groupBox8
             // 
+            groupBox8.BackColor = SystemColors.ControlDarkDark;
             groupBox8.Location = new Point(3, 792);
             groupBox8.Name = "groupBox8";
             groupBox8.Size = new Size(231, 257);
@@ -248,6 +255,7 @@
             // 
             // groupBox9
             // 
+            groupBox9.BackColor = SystemColors.ControlDarkDark;
             groupBox9.Location = new Point(240, 792);
             groupBox9.Name = "groupBox9";
             groupBox9.Size = new Size(231, 257);
@@ -257,6 +265,7 @@
             // 
             // groupBox10
             // 
+            groupBox10.BackColor = SystemColors.ControlDarkDark;
             groupBox10.Location = new Point(3, 1055);
             groupBox10.Name = "groupBox10";
             groupBox10.Size = new Size(231, 257);
@@ -266,6 +275,7 @@
             // 
             // groupBox11
             // 
+            groupBox11.BackColor = SystemColors.ControlDarkDark;
             groupBox11.Location = new Point(240, 1055);
             groupBox11.Name = "groupBox11";
             groupBox11.Size = new Size(231, 257);
