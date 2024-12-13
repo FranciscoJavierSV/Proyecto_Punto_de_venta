@@ -53,6 +53,7 @@ namespace example
             // 
             label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
+            label2.Dock = DockStyle.Left;
             label2.Font = new Font("Segoe UI", 15F);
             label2.Location = new Point(12, 419);
             label2.Name = "label2";
@@ -98,6 +99,11 @@ namespace example
             Name = "Pantalla_Inicio";
             Text = "Pantalla_Inicio";
             Click += Siguiente;
+
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
