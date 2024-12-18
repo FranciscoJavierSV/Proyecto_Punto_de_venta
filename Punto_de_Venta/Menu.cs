@@ -4,18 +4,29 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using static System.Net.Mime.MediaTypeNames;
+using System.IO;
+using System.Media;
+using System.Resources;
+using System.Windows.Forms.PropertyGridInternal;
+using Punto_de_Venta.Properties;
+using System.Numerics;
 namespace example
 {
     public partial class Menu : Form
     {
-
+        public SoundPlayer player2;
         public Menu()
         {
             InitializeComponent();
+            Hora.Enabled = true;
+            var stream = new MemoryStream(Resources.Awakening); //convierte archivo wav de byte a stream
+            player2 = new SoundPlayer(stream);
+            Hora.Enabled = true;
         }
 
         private void Salir_Inicio(object sender, EventArgs e)
@@ -26,7 +37,7 @@ namespace example
         private void clic(object sender, EventArgs e)
         {
             //Llamo al metodo
-            acceso();  
+            acceso();
         }
 
         /// <summary>
@@ -35,12 +46,12 @@ namespace example
         /// </summary>
         private void acceso()
         {
-            
+
             try
             {
                 // Variables con los valores a comprobar
-                string usuarioIngresado = txt1.Text; // Usuario ingresado
-                string contrasenaIngresada = txt2.Text; // Contraseña ingresada
+                string usuarioIngresado = TUser.Text; // Usuario ingresado
+                string contrasenaIngresada = TPassword.Text; // Contraseña ingresada
 
                 // Crear instancia de la clase DatabaseHelper
                 DatabaseHelper db = new DatabaseHelper();
@@ -74,16 +85,18 @@ namespace example
                     if (usuarioIngresado == "Admin")
                     {
                         Admin Menu_Admin = new Admin();
-                        Menu_Admin.FormClosed += Menu_cerrado;
-                        this.Hide();
+                        MessageBox.Show("¡Bienvenido! " + usuarioIngresado);
                         Menu_Admin.Show();
+                        this.Hide();
+                        Menu_Admin.FormClosed += Menu_cerrado;
                     }
                     else
                     {
-                        Usuario Menu_Usuario = new Usuario();
-                        Menu_Usuario.FormClosed += Menu_cerrado;
-                        this.Hide();
+                        Usuario Menu_Usuario = new Usuario(usuarioIngresado);
+                        MessageBox.Show("¡Bienvenido! " + usuarioIngresado);
                         Menu_Usuario.Show();
+                        this.Hide();
+                        Menu_Usuario.FormClosed += Menu_cerrado;
                     }
                 }
             }
@@ -103,8 +116,44 @@ namespace example
         private void Menu_cerrado(object sender, FormClosedEventArgs e)
         {
             this.Show();
-            txt1.Text = "";
-            txt2.Text = "";
+            TUser.Text = "";
+            TPassword.Text = "";
         }
+
+
+        private void buttonPlay_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                player2.Play();
+                player2.PlayLooping();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al reproducir: {ex.Message}");
+            }
+        }
+
+        private void buttonStop_Click(object sender, EventArgs e)
+        {
+            if (player2 != null)
+            {
+                try
+                {
+                    player2.Stop(); // Detener el audio
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al detener: {ex.Message}");
+                }
+
+            }
+        }
+
+        private void Hora_Tick(object sender, EventArgs e)
+        {
+            LTiempo.Text = DateTime.Now.ToString("hh:mm:ss");
+        }
+
     }
 }

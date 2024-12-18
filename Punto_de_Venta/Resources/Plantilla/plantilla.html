@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket de Compra</title>
+    <style>
+        table.border {
+            border-collapse: collapse;
+        }
+
+            table.border th, table.border td {
+                padding: 5px;
+                border: 1px solid black;
+            }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="LOGOfragannis.png" alt="Fragannis" style="width:150px; height:auto;">
+    </div>
+    <h4 align='center'>FRAGANNIS</h4>
+    <p align='center'>Direccion: Av. Universidad 940, Ciudad Universitaria 20100, Aguascalientes, Ags</p>
+    <p align='center'>Telefono: 449-910-7400</p>
+    <table class='border' style='width:100%'>
+        <tr><td align='center' style='background-color:#D8D8D8'>Folio</td></tr>
+        <tr><td align='center'>No: 00000111</td></tr>
+    </table>
+    <br />
+    <p>Documento: Ticket de Compra</p>
+    <p>Fecha: @FECHA</p>
+    <table border='1' style='width:100%'>
+        <tr>
+            <th>Cant.</th>
+            <th>Descripcion</th>
+            <th>P. Unitario</th>
+            <th>Importe</th>
+        </tr>
+        @FILAS
+        <tr>
+            <td style='border: 0px !important'></td>
+            <td style='border: 0px !important'></td>
+            <td align='right'>Subtotal:</td>
+            <td>@SUBTOTAL</td>
+        <tr>
+            <td style='border: 0px !important'></td>
+            <td style='border: 0px !important'></td>
+            <td align='right'>Impuestos (6%) :</td>
+            <td>@IMPUESTO</td>
+        <tr>
+            <td style='border: 0px !important'></td>
+            <td style='border: 0px !important'></td>
+            <td align='right'>Total:</td>
+            <td>@TOTAL</td>
+        </tr>
+        </tr>
+
+        </tr>
+
+    </table>
+</body>
+</html>
