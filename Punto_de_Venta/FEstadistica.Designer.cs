@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             PSeparador = new SplitContainer();
             ChartDatos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             PTotal = new Panel();
             LTotal = new Label();
+            TDatos = new DataGridView();
             Tpanel = new TableLayoutPanel();
             RDiario = new RadioButton();
             RMensual = new RadioButton();
@@ -49,6 +50,7 @@
             PSeparador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ChartDatos).BeginInit();
             PTotal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)TDatos).BeginInit();
             Tpanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,6 +65,7 @@
             PSeparador.Panel1.BackColor = Color.Transparent;
             PSeparador.Panel1.Controls.Add(ChartDatos);
             PSeparador.Panel1.Controls.Add(PTotal);
+            PSeparador.Panel1.Controls.Add(TDatos);
             // 
             // PSeparador.Panel2
             // 
@@ -75,17 +78,17 @@
             // ChartDatos
             // 
             ChartDatos.BackColor = Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            ChartDatos.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            ChartDatos.ChartAreas.Add(chartArea2);
             ChartDatos.Dock = DockStyle.Fill;
-            legend1.Name = "Legend1";
-            ChartDatos.Legends.Add(legend1);
+            legend2.Name = "Legend1";
+            ChartDatos.Legends.Add(legend2);
             ChartDatos.Location = new Point(0, 0);
             ChartDatos.Name = "ChartDatos";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            ChartDatos.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            ChartDatos.Series.Add(series2);
             ChartDatos.Size = new Size(473, 351);
             ChartDatos.TabIndex = 2;
             ChartDatos.Text = "chart1";
@@ -108,17 +111,26 @@
             LTotal.Size = new Size(473, 48);
             LTotal.TabIndex = 1;
             // 
+            // TDatos
+            // 
+            TDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TDatos.Dock = DockStyle.Fill;
+            TDatos.Location = new Point(0, 0);
+            TDatos.Name = "TDatos";
+            TDatos.Size = new Size(473, 399);
+            TDatos.TabIndex = 3;
+            // 
             // Tpanel
             // 
             Tpanel.ColumnCount = 1;
             Tpanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             Tpanel.Controls.Add(RDiario, 0, 0);
-            Tpanel.Controls.Add(RMensual, 0, 1);
-            Tpanel.Controls.Add(BBuscar, 0, 5);
-            Tpanel.Controls.Add(TFecha, 0, 4);
-            Tpanel.Controls.Add(RTotal, 0, 2);
-            Tpanel.Controls.Add(BConfirmar, 0, 3);
             Tpanel.Controls.Add(BSalir, 0, 6);
+            Tpanel.Controls.Add(RMensual, 0, 3);
+            Tpanel.Controls.Add(TFecha, 0, 1);
+            Tpanel.Controls.Add(RTotal, 0, 4);
+            Tpanel.Controls.Add(BConfirmar, 0, 5);
+            Tpanel.Controls.Add(BBuscar, 0, 2);
             Tpanel.Dock = DockStyle.Fill;
             Tpanel.Font = new Font("Segoe UI", 18F);
             Tpanel.Location = new Point(0, 0);
@@ -151,7 +163,7 @@
             // 
             RMensual.AutoSize = true;
             RMensual.Dock = DockStyle.Fill;
-            RMensual.Location = new Point(3, 60);
+            RMensual.Location = new Point(3, 174);
             RMensual.Name = "RMensual";
             RMensual.Size = new Size(191, 51);
             RMensual.TabIndex = 1;
@@ -166,7 +178,7 @@
             BBuscar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BBuscar.Dock = DockStyle.Fill;
             BBuscar.Font = new Font("Segoe UI", 25F);
-            BBuscar.Location = new Point(3, 288);
+            BBuscar.Location = new Point(3, 117);
             BBuscar.Name = "BBuscar";
             BBuscar.Size = new Size(191, 51);
             BBuscar.TabIndex = 5;
@@ -177,8 +189,7 @@
             // TFecha
             // 
             TFecha.BackColor = SystemColors.ScrollBar;
-            TFecha.Dock = DockStyle.Fill;
-            TFecha.Location = new Point(3, 231);
+            TFecha.Location = new Point(3, 60);
             TFecha.Name = "TFecha";
             TFecha.PlaceholderText = "Fecha/Usuario";
             TFecha.Size = new Size(191, 39);
@@ -188,7 +199,7 @@
             // 
             RTotal.AutoSize = true;
             RTotal.Dock = DockStyle.Fill;
-            RTotal.Location = new Point(3, 117);
+            RTotal.Location = new Point(3, 231);
             RTotal.Name = "RTotal";
             RTotal.Size = new Size(191, 51);
             RTotal.TabIndex = 7;
@@ -202,7 +213,7 @@
             BConfirmar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BConfirmar.Dock = DockStyle.Fill;
             BConfirmar.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BConfirmar.Location = new Point(3, 174);
+            BConfirmar.Location = new Point(3, 288);
             BConfirmar.Name = "BConfirmar";
             BConfirmar.Size = new Size(191, 51);
             BConfirmar.TabIndex = 3;
@@ -241,6 +252,7 @@
             PSeparador.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)ChartDatos).EndInit();
             PTotal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)TDatos).EndInit();
             Tpanel.ResumeLayout(false);
             Tpanel.PerformLayout();
             ResumeLayout(false);
@@ -259,5 +271,6 @@
         private Panel PTotal;
         private Label LTotal;
         private System.Windows.Forms.DataVisualization.Charting.Chart ChartDatos;
+        private DataGridView TDatos;
     }
 }
