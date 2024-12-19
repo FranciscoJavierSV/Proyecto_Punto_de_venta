@@ -4,13 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using BaseDatos;
-using System.Drawing.Printing;
-using System.Reflection.Metadata;
-
-// Creacion de archivo PDF
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using iTextSharp.tool.xml;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 
 namespace Punto_de_Venta
 {
@@ -19,6 +14,7 @@ namespace Punto_de_Venta
         private Carrito carrito;
         private DatabaseProductos dbConnection; // Instancia para la conexión a la base de datos de productos
         private DatabaseVentas dbVentas; // Instancia para la conexión a la base de datos de ventas
+        public bool OperacionCompletada { get; private set; } = false;
 
         public FCompra(Carrito carrito)
         {
@@ -46,11 +42,13 @@ namespace Punto_de_Venta
             decimal total = carrito.ObtenerTotal();
             TTotal.Text = total.ToString("C");
         }
+
         public decimal ObtenerImpuesto()
         {
             decimal impuesto = carrito.ObtenerTotal() * 0.06m;
             return impuesto;
         }
+
         public decimal ObtenerTotalConImpuesto()
         {
             decimal totalMasImpuesto = ObtenerImpuesto() + carrito.ObtenerTotal();
@@ -75,55 +73,14 @@ namespace Punto_de_Venta
                     guardar.Filter = "PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
                     guardar.Title = "Guardar ticket como PDF";
 
-                    // Cargar el contenido de la plantilla HTML desde recursos
-                    string paginahtml_texto = Properties.Resources.plantilla.ToString();
-
-                    // Generar las filas para la tabla de artículos
-                    string filas = "";
-                    foreach (var articulo in carrito.ObtenerArticulos())
-                    {
-                        filas += $"<tr><td>{articulo.Cantidad}</td><td>{articulo.Nombre}</td><td>{articulo.Precio:C}</td><td>{(articulo.Precio * articulo.Cantidad):C}</td></tr>";
-                    }
-                    paginahtml_texto = paginahtml_texto.Replace("@FILAS", filas);
-                    string subtotal = carrito.ObtenerTotal().ToString("C");
-                    string impuesto = ObtenerImpuesto().ToString("C");
-                    string total1 = ObtenerTotalConImpuesto().ToString("C");
-
-                    paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
-                    paginahtml_texto = paginahtml_texto.Replace("@SUBTOTAL", subtotal);
-                    paginahtml_texto = paginahtml_texto.Replace("@IMPUESTO", impuesto);
-                    paginahtml_texto = paginahtml_texto.Replace("@TOTAL", total1);
-
+                    // Crear PDF usando PdfSharp
                     if (guardar.ShowDialog() == DialogResult.OK)
                     {
                         try
                         {
-                            using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
-                            {
-                                iTextSharp.text.Document document = new iTextSharp.text.Document(PageSize.A4, 25, 25, 25, 25);
-                                PdfWriter pdfw = PdfWriter.GetInstance(document, stream);
-                                document.Open();
-
-                                iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.LOGOfragannis, System.Drawing.Imaging.ImageFormat.Png);
-                                img.ScaleToFit(80, 80);
-                                img.Alignment = iTextSharp.text.Image.UNDERLYING;
-                                img.SetAbsolutePosition(document.LeftMargin, document.Top - 60);
-                                document.Add(img);
-                                using (StringReader sr = new StringReader(paginaHtml_texto))
-                                    {
-                                        XMLWorkerHelper.GetInstance().ParseXHtml(pdfw, document, sr);
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        MessageBox.Show("Error al procesar el HTML: " + ex.Message + "\nStackTrace: " + ex.StackTrace);
-                                        document.Add(new Paragraph("Error al procesar el HTML"));
-                                    }
-                                }
-                                document.Close();
-                            }
-                            // Abrir el PDF automáticamente
+                            GenerarPDF(guardar.FileName);
+                            MessageBox.Show("PDF generado exitosamente.");
                             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo { FileName = guardar.FileName, UseShellExecute = true });
-
                         }
                         catch (Exception ex)
                         {
@@ -131,6 +88,7 @@ namespace Punto_de_Venta
                         }
                     }
                     carrito.ObtenerArticulos().Clear();
+                    OperacionCompletada = true;
                     this.Close();
                 }
                 else
@@ -143,6 +101,71 @@ namespace Punto_de_Venta
                 MessageBox.Show("El carrito está vacío. No se puede realizar la compra.");
             }
         }
+
+        private void GenerarPDF(string filePath)
+        {
+            // Crear un nuevo documento PDF
+            PdfDocument document = new PdfDocument();
+            document.Info.Title = "Ticket de Compra";
+
+            // Crear una nueva página
+            PdfPage page = document.AddPage();
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+
+            // Fuente y estilo
+            XFont font = new XFont("Verdana", 12);
+            XFont fontBold = new XFont("Verdana", 12);
+
+            // Dibujar el logo desde recursos
+            using (MemoryStream logoStream = new MemoryStream())
+            {
+                Properties.Resources.LOGOfragannis.Save(logoStream, System.Drawing.Imaging.ImageFormat.Png);
+                logoStream.Position = 0; // Reiniciar la posición del stream
+                XImage image = XImage.FromStream(logoStream);
+                double logoXPosition = (page.Width.Point - 150) / 2; // Centrar el logo
+                gfx.DrawImage(image, logoXPosition, 30, 150, 75);
+            }
+
+            // Información de la empresa
+            double infoYPosition = 120;
+            double infoXPosition = 30;
+            gfx.DrawString("FRAGANNIS", fontBold, XBrushes.Black, new XRect(infoXPosition, infoYPosition, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+            infoYPosition += 20;
+            gfx.DrawString("Direccion: Av. Universidad 940, Ciudad Universitaria 20100, Aguascalientes, Ags", font, XBrushes.Black, new XRect(infoXPosition, infoYPosition, page.Width.Point - infoXPosition, page.Height.Point), XStringFormats.TopLeft);
+            infoYPosition += 20;
+            gfx.DrawString("Telefono: 449-910-7400", font, XBrushes.Black, new XRect(infoXPosition, infoYPosition, page.Width.Point - infoXPosition, page.Height.Point), XStringFormats.TopLeft);
+
+            // Información de compra
+            gfx.DrawString("Folio: 00000111", fontBold, XBrushes.Black, new XRect(30, 180, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+            gfx.DrawString("Fecha: " + DateTime.Now.ToString("dd/MM/yyyy"), font, XBrushes.Black, new XRect(30, 200, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+
+            // Tabla de artículos
+            gfx.DrawString("Cant.", fontBold, XBrushes.Black, new XRect(30, 240, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+            gfx.DrawString("Descripcion", fontBold, XBrushes.Black, new XRect(100, 240, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+            gfx.DrawString("P. Unitario", fontBold, XBrushes.Black, new XRect(300, 240, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+            gfx.DrawString("Importe", fontBold, XBrushes.Black, new XRect(400, 240, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+
+            int yPoint = 260;
+
+            foreach (var articulo in carrito.ObtenerArticulos())
+            {
+                gfx.DrawString(articulo.Cantidad.ToString(), font, XBrushes.Black, new XRect(30, yPoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                gfx.DrawString(articulo.Nombre, font, XBrushes.Black, new XRect(100, yPoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                gfx.DrawString(articulo.Precio.ToString("C"), font, XBrushes.Black, new XRect(300, yPoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                gfx.DrawString((articulo.Precio * articulo.Cantidad).ToString("C"), font, XBrushes.Black, new XRect(400, yPoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                yPoint += 20;
+            }
+
+            // Totales
+            yPoint += 20;
+            gfx.DrawString("Subtotal: " + carrito.ObtenerTotal().ToString("C"), font, XBrushes.Black, new XRect(300, yPoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+            gfx.DrawString("Impuesto (6%): " + ObtenerImpuesto().ToString("C"), font, XBrushes.Black, new XRect(300, yPoint + 20, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+            gfx.DrawString("Total: " + ObtenerTotalConImpuesto().ToString("C"), fontBold, XBrushes.Black, new XRect(300, yPoint + 40, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+
+            // Guardar el documento
+            document.Save(filePath);
+        }
+
 
         private void BCancelar_Click(object sender, EventArgs e)
         {

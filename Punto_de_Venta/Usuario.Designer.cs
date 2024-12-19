@@ -212,11 +212,12 @@
             TPanel.Controls.Add(TControl, 0, 0);
             TPanel.Controls.Add(LTiempo, 2, 0);
             TPanel.Dock = DockStyle.Bottom;
-            TPanel.Location = new Point(0, 1000);
+            TPanel.Location = new Point(0, 553);
+            TPanel.Margin = new Padding(3, 2, 3, 2);
             TPanel.Name = "TPanel";
             TPanel.RowCount = 1;
             TPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TPanel.Size = new Size(1170, 51);
+            TPanel.Size = new Size(1024, 38);
             TPanel.TabIndex = 11;
             // 
             // LEslogan
@@ -225,9 +226,9 @@
             LEslogan.Dock = DockStyle.Fill;
             LEslogan.Font = new Font("Palatino Linotype", 20.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             LEslogan.ForeColor = SystemColors.ActiveCaptionText;
-            LEslogan.Location = new Point(237, 0);
+            LEslogan.Location = new Point(207, 0);
             LEslogan.Name = "LEslogan";
-            LEslogan.Size = new Size(754, 51);
+            LEslogan.Size = new Size(659, 38);
             LEslogan.TabIndex = 7;
             LEslogan.Text = "\"Tu fragancia perfecta, al alcance de un clic\"";
             LEslogan.TextAlign = ContentAlignment.MiddleCenter;
@@ -237,16 +238,17 @@
             TControl.ColumnCount = 2;
             TControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             TControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            TControl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 21F));
-            TControl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 21F));
+            TControl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 18F));
+            TControl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 18F));
             TControl.Controls.Add(BMusic_Play, 0, 0);
             TControl.Controls.Add(BMusic_Stop, 1, 0);
             TControl.Dock = DockStyle.Left;
-            TControl.Location = new Point(3, 3);
+            TControl.Location = new Point(3, 2);
+            TControl.Margin = new Padding(3, 2, 3, 2);
             TControl.Name = "TControl";
             TControl.RowCount = 1;
             TControl.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TControl.Size = new Size(101, 45);
+            TControl.Size = new Size(88, 34);
             TControl.TabIndex = 9;
             // 
             // BMusic_Play
@@ -255,9 +257,10 @@
             BMusic_Play.FlatStyle = FlatStyle.Flat;
             BMusic_Play.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BMusic_Play.ForeColor = SystemColors.Control;
-            BMusic_Play.Location = new Point(3, 3);
+            BMusic_Play.Location = new Point(3, 2);
+            BMusic_Play.Margin = new Padding(3, 2, 3, 2);
             BMusic_Play.Name = "BMusic_Play";
-            BMusic_Play.Size = new Size(44, 39);
+            BMusic_Play.Size = new Size(38, 30);
             BMusic_Play.TabIndex = 4;
             BMusic_Play.Text = "▶";
             BMusic_Play.UseVisualStyleBackColor = true;
@@ -270,9 +273,10 @@
             BMusic_Stop.FlatStyle = FlatStyle.Flat;
             BMusic_Stop.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BMusic_Stop.ForeColor = SystemColors.Control;
-            BMusic_Stop.Location = new Point(53, 3);
+            BMusic_Stop.Location = new Point(47, 2);
+            BMusic_Stop.Margin = new Padding(3, 2, 3, 2);
             BMusic_Stop.Name = "BMusic_Stop";
-            BMusic_Stop.Size = new Size(45, 39);
+            BMusic_Stop.Size = new Size(38, 30);
             BMusic_Stop.TabIndex = 5;
             BMusic_Stop.Text = "■";
             BMusic_Stop.UseVisualStyleBackColor = false;
@@ -284,9 +288,9 @@
             LTiempo.Dock = DockStyle.Fill;
             LTiempo.Font = new Font("Palatino Linotype", 21.75F, FontStyle.Italic);
             LTiempo.ForeColor = SystemColors.ActiveCaptionText;
-            LTiempo.Location = new Point(997, 0);
+            LTiempo.Location = new Point(872, 0);
             LTiempo.Name = "LTiempo";
-            LTiempo.Size = new Size(170, 51);
+            LTiempo.Size = new Size(149, 38);
             LTiempo.TabIndex = 8;
             LTiempo.Text = "Hora de Tie";
             LTiempo.TextAlign = ContentAlignment.MiddleCenter;
@@ -296,7 +300,6 @@
             SUsuario.BackColor = Color.Transparent;
             SUsuario.Dock = DockStyle.Fill;
             SUsuario.Location = new Point(0, 0);
-            SUsuario.Margin = new Padding(3, 4, 3, 4);
             SUsuario.Name = "SUsuario";
             // 
             // SUsuario.Panel1
@@ -308,9 +311,8 @@
             // 
             SUsuario.Panel2.Controls.Add(label1);
             SUsuario.Panel2.Controls.Add(GPanel);
-            SUsuario.Size = new Size(1170, 1000);
-            SUsuario.SplitterDistance = 842;
-            SUsuario.SplitterWidth = 5;
+            SUsuario.Size = new Size(1024, 553);
+            SUsuario.SplitterDistance = 736;
             SUsuario.TabIndex = 12;
             // 
             // PArticulos
@@ -319,9 +321,8 @@
             PArticulos.Controls.Add(TLArticulos);
             PArticulos.Dock = DockStyle.Fill;
             PArticulos.Location = new Point(0, 0);
-            PArticulos.Margin = new Padding(3, 4, 3, 4);
             PArticulos.Name = "PArticulos";
-            PArticulos.Size = new Size(842, 1000);
+            PArticulos.Size = new Size(736, 553);
             PArticulos.TabIndex = 0;
             // 
             // TLArticulos
@@ -346,7 +347,6 @@
             TLArticulos.Dock = DockStyle.Top;
             TLArticulos.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
             TLArticulos.Location = new Point(0, 0);
-            TLArticulos.Margin = new Padding(3, 4, 3, 4);
             TLArticulos.Name = "TLArticulos";
             TLArticulos.RowCount = 5;
             TLArticulos.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -354,7 +354,7 @@
             TLArticulos.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             TLArticulos.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             TLArticulos.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            TLArticulos.Size = new Size(821, 2933);
+            TLArticulos.Size = new Size(719, 2200);
             TLArticulos.TabIndex = 4;
             TLArticulos.Paint += TLArticulos_Paint;
             // 
@@ -368,11 +368,9 @@
             GArticulo10.Controls.Add(PArt_Agre10);
             GArticulo10.Dock = DockStyle.Fill;
             GArticulo10.Font = new Font("Palatino Linotype", 12F, FontStyle.Italic);
-            GArticulo10.Location = new Point(413, 2348);
-            GArticulo10.Margin = new Padding(3, 4, 3, 4);
+            GArticulo10.Location = new Point(361, 1763);
             GArticulo10.Name = "GArticulo10";
-            GArticulo10.Padding = new Padding(3, 4, 3, 4);
-            GArticulo10.Size = new Size(240, 581);
+            GArticulo10.Size = new Size(209, 434);
             GArticulo10.TabIndex = 29;
             GArticulo10.TabStop = false;
             GArticulo10.Text = "Nombre del Articulo";
@@ -381,10 +379,9 @@
             // 
             PArticulo10.BackColor = Color.Transparent;
             PArticulo10.Dock = DockStyle.Fill;
-            PArticulo10.Location = new Point(3, 31);
-            PArticulo10.Margin = new Padding(3, 4, 3, 4);
+            PArticulo10.Location = new Point(3, 25);
             PArticulo10.Name = "PArticulo10";
-            PArticulo10.Size = new Size(234, 275);
+            PArticulo10.Size = new Size(203, 202);
             PArticulo10.SizeMode = PictureBoxSizeMode.StretchImage;
             PArticulo10.TabIndex = 0;
             PArticulo10.TabStop = false;
@@ -393,9 +390,9 @@
             // 
             LArticulo10.BackColor = Color.Silver;
             LArticulo10.Dock = DockStyle.Bottom;
-            LArticulo10.Location = new Point(3, 306);
+            LArticulo10.Location = new Point(3, 227);
             LArticulo10.Name = "LArticulo10";
-            LArticulo10.Size = new Size(234, 189);
+            LArticulo10.Size = new Size(203, 142);
             LArticulo10.TabIndex = 1;
             LArticulo10.Text = "Descripcion";
             // 
@@ -404,30 +401,27 @@
             PPrecio10.Controls.Add(TCantidad10);
             PPrecio10.Controls.Add(TPrecio10);
             PPrecio10.Dock = DockStyle.Bottom;
-            PPrecio10.Location = new Point(3, 495);
-            PPrecio10.Margin = new Padding(3, 4, 3, 4);
+            PPrecio10.Location = new Point(3, 369);
             PPrecio10.Name = "PPrecio10";
-            PPrecio10.Size = new Size(234, 37);
+            PPrecio10.Size = new Size(203, 28);
             PPrecio10.TabIndex = 21;
             // 
             // TCantidad10
             // 
             TCantidad10.Dock = DockStyle.Fill;
-            TCantidad10.Location = new Point(175, 0);
-            TCantidad10.Margin = new Padding(3, 4, 3, 4);
+            TCantidad10.Location = new Point(154, 0);
             TCantidad10.Name = "TCantidad10";
             TCantidad10.ReadOnly = true;
-            TCantidad10.Size = new Size(59, 34);
+            TCantidad10.Size = new Size(49, 29);
             TCantidad10.TabIndex = 16;
             // 
             // TPrecio10
             // 
             TPrecio10.Dock = DockStyle.Left;
             TPrecio10.Location = new Point(0, 0);
-            TPrecio10.Margin = new Padding(3, 4, 3, 4);
             TPrecio10.Name = "TPrecio10";
             TPrecio10.ReadOnly = true;
-            TPrecio10.Size = new Size(175, 34);
+            TPrecio10.Size = new Size(154, 29);
             TPrecio10.TabIndex = 15;
             // 
             // PArt_Agre10
@@ -436,20 +430,18 @@
             PArt_Agre10.Controls.Add(NArt10);
             PArt_Agre10.Controls.Add(BAnadir10);
             PArt_Agre10.Dock = DockStyle.Bottom;
-            PArt_Agre10.Location = new Point(3, 532);
-            PArt_Agre10.Margin = new Padding(3, 4, 3, 4);
+            PArt_Agre10.Location = new Point(3, 397);
             PArt_Agre10.Name = "PArt_Agre10";
-            PArt_Agre10.Size = new Size(234, 45);
+            PArt_Agre10.Size = new Size(203, 34);
             PArt_Agre10.TabIndex = 14;
             // 
             // NArt10
             // 
             NArt10.Dock = DockStyle.Fill;
             NArt10.Font = new Font("Palatino Linotype", 15F, FontStyle.Italic);
-            NArt10.Location = new Point(109, 0);
-            NArt10.Margin = new Padding(3, 4, 3, 4);
+            NArt10.Location = new Point(95, 0);
             NArt10.Name = "NArt10";
-            NArt10.Size = new Size(125, 41);
+            NArt10.Size = new Size(108, 34);
             NArt10.TabIndex = 0;
             // 
             // BAnadir10
@@ -457,9 +449,8 @@
             BAnadir10.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BAnadir10.Dock = DockStyle.Left;
             BAnadir10.Location = new Point(0, 0);
-            BAnadir10.Margin = new Padding(3, 4, 3, 4);
             BAnadir10.Name = "BAnadir10";
-            BAnadir10.Size = new Size(109, 45);
+            BAnadir10.Size = new Size(95, 34);
             BAnadir10.TabIndex = 1;
             BAnadir10.Text = "Anadir";
             BAnadir10.UseVisualStyleBackColor = true;
@@ -475,11 +466,9 @@
             GArticulo9.Controls.Add(PArt_Agre9);
             GArticulo9.Dock = DockStyle.Fill;
             GArticulo9.Font = new Font("Palatino Linotype", 12F, FontStyle.Italic);
-            GArticulo9.Location = new Point(167, 2348);
-            GArticulo9.Margin = new Padding(3, 4, 3, 4);
+            GArticulo9.Location = new Point(146, 1763);
             GArticulo9.Name = "GArticulo9";
-            GArticulo9.Padding = new Padding(3, 4, 3, 4);
-            GArticulo9.Size = new Size(240, 581);
+            GArticulo9.Size = new Size(209, 434);
             GArticulo9.TabIndex = 28;
             GArticulo9.TabStop = false;
             GArticulo9.Text = "Nombre del Articulo";
@@ -488,10 +477,9 @@
             // 
             PArticulo9.BackColor = Color.Transparent;
             PArticulo9.Dock = DockStyle.Fill;
-            PArticulo9.Location = new Point(3, 31);
-            PArticulo9.Margin = new Padding(3, 4, 3, 4);
+            PArticulo9.Location = new Point(3, 25);
             PArticulo9.Name = "PArticulo9";
-            PArticulo9.Size = new Size(234, 275);
+            PArticulo9.Size = new Size(203, 202);
             PArticulo9.SizeMode = PictureBoxSizeMode.StretchImage;
             PArticulo9.TabIndex = 0;
             PArticulo9.TabStop = false;
@@ -500,9 +488,9 @@
             // 
             LArticulo9.BackColor = Color.Silver;
             LArticulo9.Dock = DockStyle.Bottom;
-            LArticulo9.Location = new Point(3, 306);
+            LArticulo9.Location = new Point(3, 227);
             LArticulo9.Name = "LArticulo9";
-            LArticulo9.Size = new Size(234, 189);
+            LArticulo9.Size = new Size(203, 142);
             LArticulo9.TabIndex = 1;
             LArticulo9.Text = "Descripcion";
             // 
@@ -511,30 +499,27 @@
             PPrecio9.Controls.Add(TCantidad9);
             PPrecio9.Controls.Add(TPrecio9);
             PPrecio9.Dock = DockStyle.Bottom;
-            PPrecio9.Location = new Point(3, 495);
-            PPrecio9.Margin = new Padding(3, 4, 3, 4);
+            PPrecio9.Location = new Point(3, 369);
             PPrecio9.Name = "PPrecio9";
-            PPrecio9.Size = new Size(234, 37);
+            PPrecio9.Size = new Size(203, 28);
             PPrecio9.TabIndex = 21;
             // 
             // TCantidad9
             // 
             TCantidad9.Dock = DockStyle.Fill;
-            TCantidad9.Location = new Point(175, 0);
-            TCantidad9.Margin = new Padding(3, 4, 3, 4);
+            TCantidad9.Location = new Point(154, 0);
             TCantidad9.Name = "TCantidad9";
             TCantidad9.ReadOnly = true;
-            TCantidad9.Size = new Size(59, 34);
+            TCantidad9.Size = new Size(49, 29);
             TCantidad9.TabIndex = 16;
             // 
             // TPrecio9
             // 
             TPrecio9.Dock = DockStyle.Left;
             TPrecio9.Location = new Point(0, 0);
-            TPrecio9.Margin = new Padding(3, 4, 3, 4);
             TPrecio9.Name = "TPrecio9";
             TPrecio9.ReadOnly = true;
-            TPrecio9.Size = new Size(175, 34);
+            TPrecio9.Size = new Size(154, 29);
             TPrecio9.TabIndex = 15;
             // 
             // PArt_Agre9
@@ -543,20 +528,18 @@
             PArt_Agre9.Controls.Add(NArt9);
             PArt_Agre9.Controls.Add(BAnadir9);
             PArt_Agre9.Dock = DockStyle.Bottom;
-            PArt_Agre9.Location = new Point(3, 532);
-            PArt_Agre9.Margin = new Padding(3, 4, 3, 4);
+            PArt_Agre9.Location = new Point(3, 397);
             PArt_Agre9.Name = "PArt_Agre9";
-            PArt_Agre9.Size = new Size(234, 45);
+            PArt_Agre9.Size = new Size(203, 34);
             PArt_Agre9.TabIndex = 14;
             // 
             // NArt9
             // 
             NArt9.Dock = DockStyle.Fill;
             NArt9.Font = new Font("Palatino Linotype", 15F, FontStyle.Italic);
-            NArt9.Location = new Point(109, 0);
-            NArt9.Margin = new Padding(3, 4, 3, 4);
+            NArt9.Location = new Point(95, 0);
             NArt9.Name = "NArt9";
-            NArt9.Size = new Size(125, 41);
+            NArt9.Size = new Size(108, 34);
             NArt9.TabIndex = 0;
             // 
             // BAnadir9
@@ -564,9 +547,8 @@
             BAnadir9.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BAnadir9.Dock = DockStyle.Left;
             BAnadir9.Location = new Point(0, 0);
-            BAnadir9.Margin = new Padding(3, 4, 3, 4);
             BAnadir9.Name = "BAnadir9";
-            BAnadir9.Size = new Size(109, 45);
+            BAnadir9.Size = new Size(95, 34);
             BAnadir9.TabIndex = 1;
             BAnadir9.Text = "Anadir";
             BAnadir9.UseVisualStyleBackColor = true;
@@ -582,11 +564,9 @@
             GArticulo8.Controls.Add(PArt_Agre8);
             GArticulo8.Dock = DockStyle.Fill;
             GArticulo8.Font = new Font("Palatino Linotype", 12F, FontStyle.Italic);
-            GArticulo8.Location = new Point(413, 1762);
-            GArticulo8.Margin = new Padding(3, 4, 3, 4);
+            GArticulo8.Location = new Point(361, 1323);
             GArticulo8.Name = "GArticulo8";
-            GArticulo8.Padding = new Padding(3, 4, 3, 4);
-            GArticulo8.Size = new Size(240, 578);
+            GArticulo8.Size = new Size(209, 434);
             GArticulo8.TabIndex = 27;
             GArticulo8.TabStop = false;
             GArticulo8.Text = "Nombre del Articulo";
@@ -595,10 +575,9 @@
             // 
             PArticulo8.BackColor = Color.Transparent;
             PArticulo8.Dock = DockStyle.Fill;
-            PArticulo8.Location = new Point(3, 31);
-            PArticulo8.Margin = new Padding(3, 4, 3, 4);
+            PArticulo8.Location = new Point(3, 25);
             PArticulo8.Name = "PArticulo8";
-            PArticulo8.Size = new Size(234, 272);
+            PArticulo8.Size = new Size(203, 202);
             PArticulo8.SizeMode = PictureBoxSizeMode.StretchImage;
             PArticulo8.TabIndex = 0;
             PArticulo8.TabStop = false;
@@ -607,9 +586,9 @@
             // 
             LArticulo8.BackColor = Color.Silver;
             LArticulo8.Dock = DockStyle.Bottom;
-            LArticulo8.Location = new Point(3, 303);
+            LArticulo8.Location = new Point(3, 227);
             LArticulo8.Name = "LArticulo8";
-            LArticulo8.Size = new Size(234, 189);
+            LArticulo8.Size = new Size(203, 142);
             LArticulo8.TabIndex = 1;
             LArticulo8.Text = "Descripcion";
             // 
@@ -618,30 +597,27 @@
             PPrecio8.Controls.Add(TCantidad8);
             PPrecio8.Controls.Add(TPrecio8);
             PPrecio8.Dock = DockStyle.Bottom;
-            PPrecio8.Location = new Point(3, 492);
-            PPrecio8.Margin = new Padding(3, 4, 3, 4);
+            PPrecio8.Location = new Point(3, 369);
             PPrecio8.Name = "PPrecio8";
-            PPrecio8.Size = new Size(234, 37);
+            PPrecio8.Size = new Size(203, 28);
             PPrecio8.TabIndex = 20;
             // 
             // TCantidad8
             // 
             TCantidad8.Dock = DockStyle.Fill;
-            TCantidad8.Location = new Point(175, 0);
-            TCantidad8.Margin = new Padding(3, 4, 3, 4);
+            TCantidad8.Location = new Point(154, 0);
             TCantidad8.Name = "TCantidad8";
             TCantidad8.ReadOnly = true;
-            TCantidad8.Size = new Size(59, 34);
+            TCantidad8.Size = new Size(49, 29);
             TCantidad8.TabIndex = 16;
             // 
             // TPrecio8
             // 
             TPrecio8.Dock = DockStyle.Left;
             TPrecio8.Location = new Point(0, 0);
-            TPrecio8.Margin = new Padding(3, 4, 3, 4);
             TPrecio8.Name = "TPrecio8";
             TPrecio8.ReadOnly = true;
-            TPrecio8.Size = new Size(175, 34);
+            TPrecio8.Size = new Size(154, 29);
             TPrecio8.TabIndex = 15;
             // 
             // PArt_Agre8
@@ -650,20 +626,18 @@
             PArt_Agre8.Controls.Add(NArt8);
             PArt_Agre8.Controls.Add(BAnadir8);
             PArt_Agre8.Dock = DockStyle.Bottom;
-            PArt_Agre8.Location = new Point(3, 529);
-            PArt_Agre8.Margin = new Padding(3, 4, 3, 4);
+            PArt_Agre8.Location = new Point(3, 397);
             PArt_Agre8.Name = "PArt_Agre8";
-            PArt_Agre8.Size = new Size(234, 45);
+            PArt_Agre8.Size = new Size(203, 34);
             PArt_Agre8.TabIndex = 14;
             // 
             // NArt8
             // 
             NArt8.Dock = DockStyle.Fill;
             NArt8.Font = new Font("Palatino Linotype", 15F, FontStyle.Italic);
-            NArt8.Location = new Point(109, 0);
-            NArt8.Margin = new Padding(3, 4, 3, 4);
+            NArt8.Location = new Point(95, 0);
             NArt8.Name = "NArt8";
-            NArt8.Size = new Size(125, 41);
+            NArt8.Size = new Size(108, 34);
             NArt8.TabIndex = 0;
             // 
             // BAnadir8
@@ -671,9 +645,8 @@
             BAnadir8.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BAnadir8.Dock = DockStyle.Left;
             BAnadir8.Location = new Point(0, 0);
-            BAnadir8.Margin = new Padding(3, 4, 3, 4);
             BAnadir8.Name = "BAnadir8";
-            BAnadir8.Size = new Size(109, 45);
+            BAnadir8.Size = new Size(95, 34);
             BAnadir8.TabIndex = 1;
             BAnadir8.Text = "Anadir";
             BAnadir8.UseVisualStyleBackColor = true;
@@ -689,11 +662,9 @@
             GArticulo7.Controls.Add(PArt_Agre7);
             GArticulo7.Dock = DockStyle.Fill;
             GArticulo7.Font = new Font("Palatino Linotype", 12F, FontStyle.Italic);
-            GArticulo7.Location = new Point(167, 1762);
-            GArticulo7.Margin = new Padding(3, 4, 3, 4);
+            GArticulo7.Location = new Point(146, 1323);
             GArticulo7.Name = "GArticulo7";
-            GArticulo7.Padding = new Padding(3, 4, 3, 4);
-            GArticulo7.Size = new Size(240, 578);
+            GArticulo7.Size = new Size(209, 434);
             GArticulo7.TabIndex = 26;
             GArticulo7.TabStop = false;
             GArticulo7.Text = "Nombre del Articulo";
@@ -702,10 +673,9 @@
             // 
             PArticulo7.BackColor = Color.Transparent;
             PArticulo7.Dock = DockStyle.Fill;
-            PArticulo7.Location = new Point(3, 31);
-            PArticulo7.Margin = new Padding(3, 4, 3, 4);
+            PArticulo7.Location = new Point(3, 25);
             PArticulo7.Name = "PArticulo7";
-            PArticulo7.Size = new Size(234, 272);
+            PArticulo7.Size = new Size(203, 202);
             PArticulo7.SizeMode = PictureBoxSizeMode.StretchImage;
             PArticulo7.TabIndex = 0;
             PArticulo7.TabStop = false;
@@ -714,9 +684,9 @@
             // 
             LArticulo7.BackColor = Color.Silver;
             LArticulo7.Dock = DockStyle.Bottom;
-            LArticulo7.Location = new Point(3, 303);
+            LArticulo7.Location = new Point(3, 227);
             LArticulo7.Name = "LArticulo7";
-            LArticulo7.Size = new Size(234, 189);
+            LArticulo7.Size = new Size(203, 142);
             LArticulo7.TabIndex = 1;
             LArticulo7.Text = "Descripcion";
             // 
@@ -725,30 +695,27 @@
             PPrecio7.Controls.Add(TCantidad7);
             PPrecio7.Controls.Add(TPrecio7);
             PPrecio7.Dock = DockStyle.Bottom;
-            PPrecio7.Location = new Point(3, 492);
-            PPrecio7.Margin = new Padding(3, 4, 3, 4);
+            PPrecio7.Location = new Point(3, 369);
             PPrecio7.Name = "PPrecio7";
-            PPrecio7.Size = new Size(234, 37);
+            PPrecio7.Size = new Size(203, 28);
             PPrecio7.TabIndex = 20;
             // 
             // TCantidad7
             // 
             TCantidad7.Dock = DockStyle.Fill;
-            TCantidad7.Location = new Point(175, 0);
-            TCantidad7.Margin = new Padding(3, 4, 3, 4);
+            TCantidad7.Location = new Point(154, 0);
             TCantidad7.Name = "TCantidad7";
             TCantidad7.ReadOnly = true;
-            TCantidad7.Size = new Size(59, 34);
+            TCantidad7.Size = new Size(49, 29);
             TCantidad7.TabIndex = 16;
             // 
             // TPrecio7
             // 
             TPrecio7.Dock = DockStyle.Left;
             TPrecio7.Location = new Point(0, 0);
-            TPrecio7.Margin = new Padding(3, 4, 3, 4);
             TPrecio7.Name = "TPrecio7";
             TPrecio7.ReadOnly = true;
-            TPrecio7.Size = new Size(175, 34);
+            TPrecio7.Size = new Size(154, 29);
             TPrecio7.TabIndex = 15;
             // 
             // PArt_Agre7
@@ -757,20 +724,18 @@
             PArt_Agre7.Controls.Add(NArt7);
             PArt_Agre7.Controls.Add(BAnadir7);
             PArt_Agre7.Dock = DockStyle.Bottom;
-            PArt_Agre7.Location = new Point(3, 529);
-            PArt_Agre7.Margin = new Padding(3, 4, 3, 4);
+            PArt_Agre7.Location = new Point(3, 397);
             PArt_Agre7.Name = "PArt_Agre7";
-            PArt_Agre7.Size = new Size(234, 45);
+            PArt_Agre7.Size = new Size(203, 34);
             PArt_Agre7.TabIndex = 14;
             // 
             // NArt7
             // 
             NArt7.Dock = DockStyle.Fill;
             NArt7.Font = new Font("Palatino Linotype", 15F, FontStyle.Italic);
-            NArt7.Location = new Point(109, 0);
-            NArt7.Margin = new Padding(3, 4, 3, 4);
+            NArt7.Location = new Point(95, 0);
             NArt7.Name = "NArt7";
-            NArt7.Size = new Size(125, 41);
+            NArt7.Size = new Size(108, 34);
             NArt7.TabIndex = 0;
             // 
             // BAnadir7
@@ -778,9 +743,8 @@
             BAnadir7.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BAnadir7.Dock = DockStyle.Left;
             BAnadir7.Location = new Point(0, 0);
-            BAnadir7.Margin = new Padding(3, 4, 3, 4);
             BAnadir7.Name = "BAnadir7";
-            BAnadir7.Size = new Size(109, 45);
+            BAnadir7.Size = new Size(95, 34);
             BAnadir7.TabIndex = 1;
             BAnadir7.Text = "Anadir";
             BAnadir7.UseVisualStyleBackColor = true;
@@ -796,11 +760,9 @@
             GArticulo6.Controls.Add(PArt_Agre6);
             GArticulo6.Dock = DockStyle.Fill;
             GArticulo6.Font = new Font("Palatino Linotype", 12F, FontStyle.Italic);
-            GArticulo6.Location = new Point(413, 1176);
-            GArticulo6.Margin = new Padding(3, 4, 3, 4);
+            GArticulo6.Location = new Point(361, 883);
             GArticulo6.Name = "GArticulo6";
-            GArticulo6.Padding = new Padding(3, 4, 3, 4);
-            GArticulo6.Size = new Size(240, 578);
+            GArticulo6.Size = new Size(209, 434);
             GArticulo6.TabIndex = 25;
             GArticulo6.TabStop = false;
             GArticulo6.Text = "Nombre del Articulo";
@@ -809,10 +771,9 @@
             // 
             PArticulo6.BackColor = Color.Transparent;
             PArticulo6.Dock = DockStyle.Fill;
-            PArticulo6.Location = new Point(3, 31);
-            PArticulo6.Margin = new Padding(3, 4, 3, 4);
+            PArticulo6.Location = new Point(3, 25);
             PArticulo6.Name = "PArticulo6";
-            PArticulo6.Size = new Size(234, 272);
+            PArticulo6.Size = new Size(203, 202);
             PArticulo6.SizeMode = PictureBoxSizeMode.StretchImage;
             PArticulo6.TabIndex = 0;
             PArticulo6.TabStop = false;
@@ -821,9 +782,9 @@
             // 
             LArticulo6.BackColor = Color.Silver;
             LArticulo6.Dock = DockStyle.Bottom;
-            LArticulo6.Location = new Point(3, 303);
+            LArticulo6.Location = new Point(3, 227);
             LArticulo6.Name = "LArticulo6";
-            LArticulo6.Size = new Size(234, 189);
+            LArticulo6.Size = new Size(203, 142);
             LArticulo6.TabIndex = 1;
             LArticulo6.Text = "Descripcion";
             // 
@@ -832,30 +793,27 @@
             PPrecio6.Controls.Add(TCantidad6);
             PPrecio6.Controls.Add(TPrecio6);
             PPrecio6.Dock = DockStyle.Bottom;
-            PPrecio6.Location = new Point(3, 492);
-            PPrecio6.Margin = new Padding(3, 4, 3, 4);
+            PPrecio6.Location = new Point(3, 369);
             PPrecio6.Name = "PPrecio6";
-            PPrecio6.Size = new Size(234, 37);
+            PPrecio6.Size = new Size(203, 28);
             PPrecio6.TabIndex = 19;
             // 
             // TCantidad6
             // 
             TCantidad6.Dock = DockStyle.Fill;
-            TCantidad6.Location = new Point(175, 0);
-            TCantidad6.Margin = new Padding(3, 4, 3, 4);
+            TCantidad6.Location = new Point(154, 0);
             TCantidad6.Name = "TCantidad6";
             TCantidad6.ReadOnly = true;
-            TCantidad6.Size = new Size(59, 34);
+            TCantidad6.Size = new Size(49, 29);
             TCantidad6.TabIndex = 16;
             // 
             // TPrecio6
             // 
             TPrecio6.Dock = DockStyle.Left;
             TPrecio6.Location = new Point(0, 0);
-            TPrecio6.Margin = new Padding(3, 4, 3, 4);
             TPrecio6.Name = "TPrecio6";
             TPrecio6.ReadOnly = true;
-            TPrecio6.Size = new Size(175, 34);
+            TPrecio6.Size = new Size(154, 29);
             TPrecio6.TabIndex = 15;
             // 
             // PArt_Agre6
@@ -864,20 +822,18 @@
             PArt_Agre6.Controls.Add(NArt6);
             PArt_Agre6.Controls.Add(BAnadir6);
             PArt_Agre6.Dock = DockStyle.Bottom;
-            PArt_Agre6.Location = new Point(3, 529);
-            PArt_Agre6.Margin = new Padding(3, 4, 3, 4);
+            PArt_Agre6.Location = new Point(3, 397);
             PArt_Agre6.Name = "PArt_Agre6";
-            PArt_Agre6.Size = new Size(234, 45);
+            PArt_Agre6.Size = new Size(203, 34);
             PArt_Agre6.TabIndex = 14;
             // 
             // NArt6
             // 
             NArt6.Dock = DockStyle.Fill;
             NArt6.Font = new Font("Palatino Linotype", 15F, FontStyle.Italic);
-            NArt6.Location = new Point(109, 0);
-            NArt6.Margin = new Padding(3, 4, 3, 4);
+            NArt6.Location = new Point(95, 0);
             NArt6.Name = "NArt6";
-            NArt6.Size = new Size(125, 41);
+            NArt6.Size = new Size(108, 34);
             NArt6.TabIndex = 0;
             // 
             // BAnadir6
@@ -885,9 +841,8 @@
             BAnadir6.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BAnadir6.Dock = DockStyle.Left;
             BAnadir6.Location = new Point(0, 0);
-            BAnadir6.Margin = new Padding(3, 4, 3, 4);
             BAnadir6.Name = "BAnadir6";
-            BAnadir6.Size = new Size(109, 45);
+            BAnadir6.Size = new Size(95, 34);
             BAnadir6.TabIndex = 1;
             BAnadir6.Text = "Anadir";
             BAnadir6.UseVisualStyleBackColor = true;
@@ -903,11 +858,9 @@
             GArticulo5.Controls.Add(PArt_Agre5);
             GArticulo5.Dock = DockStyle.Fill;
             GArticulo5.Font = new Font("Palatino Linotype", 12F, FontStyle.Italic);
-            GArticulo5.Location = new Point(167, 1176);
-            GArticulo5.Margin = new Padding(3, 4, 3, 4);
+            GArticulo5.Location = new Point(146, 883);
             GArticulo5.Name = "GArticulo5";
-            GArticulo5.Padding = new Padding(3, 4, 3, 4);
-            GArticulo5.Size = new Size(240, 578);
+            GArticulo5.Size = new Size(209, 434);
             GArticulo5.TabIndex = 24;
             GArticulo5.TabStop = false;
             GArticulo5.Text = "Nombre del Articulo";
@@ -916,10 +869,9 @@
             // 
             PArticulo5.BackColor = Color.Transparent;
             PArticulo5.Dock = DockStyle.Fill;
-            PArticulo5.Location = new Point(3, 31);
-            PArticulo5.Margin = new Padding(3, 4, 3, 4);
+            PArticulo5.Location = new Point(3, 25);
             PArticulo5.Name = "PArticulo5";
-            PArticulo5.Size = new Size(234, 272);
+            PArticulo5.Size = new Size(203, 202);
             PArticulo5.SizeMode = PictureBoxSizeMode.StretchImage;
             PArticulo5.TabIndex = 0;
             PArticulo5.TabStop = false;
@@ -928,9 +880,9 @@
             // 
             LArticulo5.BackColor = Color.Silver;
             LArticulo5.Dock = DockStyle.Bottom;
-            LArticulo5.Location = new Point(3, 303);
+            LArticulo5.Location = new Point(3, 227);
             LArticulo5.Name = "LArticulo5";
-            LArticulo5.Size = new Size(234, 189);
+            LArticulo5.Size = new Size(203, 142);
             LArticulo5.TabIndex = 1;
             LArticulo5.Text = "Descripcion";
             // 
@@ -939,30 +891,27 @@
             PPrecio5.Controls.Add(TCantidad5);
             PPrecio5.Controls.Add(TPrecio5);
             PPrecio5.Dock = DockStyle.Bottom;
-            PPrecio5.Location = new Point(3, 492);
-            PPrecio5.Margin = new Padding(3, 4, 3, 4);
+            PPrecio5.Location = new Point(3, 369);
             PPrecio5.Name = "PPrecio5";
-            PPrecio5.Size = new Size(234, 37);
+            PPrecio5.Size = new Size(203, 28);
             PPrecio5.TabIndex = 19;
             // 
             // TCantidad5
             // 
             TCantidad5.Dock = DockStyle.Fill;
-            TCantidad5.Location = new Point(175, 0);
-            TCantidad5.Margin = new Padding(3, 4, 3, 4);
+            TCantidad5.Location = new Point(154, 0);
             TCantidad5.Name = "TCantidad5";
             TCantidad5.ReadOnly = true;
-            TCantidad5.Size = new Size(59, 34);
+            TCantidad5.Size = new Size(49, 29);
             TCantidad5.TabIndex = 16;
             // 
             // TPrecio5
             // 
             TPrecio5.Dock = DockStyle.Left;
             TPrecio5.Location = new Point(0, 0);
-            TPrecio5.Margin = new Padding(3, 4, 3, 4);
             TPrecio5.Name = "TPrecio5";
             TPrecio5.ReadOnly = true;
-            TPrecio5.Size = new Size(175, 34);
+            TPrecio5.Size = new Size(154, 29);
             TPrecio5.TabIndex = 15;
             // 
             // PArt_Agre5
@@ -971,20 +920,18 @@
             PArt_Agre5.Controls.Add(NArt5);
             PArt_Agre5.Controls.Add(BAnadir5);
             PArt_Agre5.Dock = DockStyle.Bottom;
-            PArt_Agre5.Location = new Point(3, 529);
-            PArt_Agre5.Margin = new Padding(3, 4, 3, 4);
+            PArt_Agre5.Location = new Point(3, 397);
             PArt_Agre5.Name = "PArt_Agre5";
-            PArt_Agre5.Size = new Size(234, 45);
+            PArt_Agre5.Size = new Size(203, 34);
             PArt_Agre5.TabIndex = 14;
             // 
             // NArt5
             // 
             NArt5.Dock = DockStyle.Fill;
             NArt5.Font = new Font("Palatino Linotype", 15F, FontStyle.Italic);
-            NArt5.Location = new Point(109, 0);
-            NArt5.Margin = new Padding(3, 4, 3, 4);
+            NArt5.Location = new Point(95, 0);
             NArt5.Name = "NArt5";
-            NArt5.Size = new Size(125, 41);
+            NArt5.Size = new Size(108, 34);
             NArt5.TabIndex = 0;
             // 
             // BAnadir5
@@ -992,9 +939,8 @@
             BAnadir5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BAnadir5.Dock = DockStyle.Left;
             BAnadir5.Location = new Point(0, 0);
-            BAnadir5.Margin = new Padding(3, 4, 3, 4);
             BAnadir5.Name = "BAnadir5";
-            BAnadir5.Size = new Size(109, 45);
+            BAnadir5.Size = new Size(95, 34);
             BAnadir5.TabIndex = 1;
             BAnadir5.Text = "Anadir";
             BAnadir5.UseVisualStyleBackColor = true;
@@ -1010,11 +956,9 @@
             GArticulo4.Controls.Add(PArt_Agre4);
             GArticulo4.Dock = DockStyle.Fill;
             GArticulo4.Font = new Font("Palatino Linotype", 12F, FontStyle.Italic);
-            GArticulo4.Location = new Point(413, 590);
-            GArticulo4.Margin = new Padding(3, 4, 3, 4);
+            GArticulo4.Location = new Point(361, 443);
             GArticulo4.Name = "GArticulo4";
-            GArticulo4.Padding = new Padding(3, 4, 3, 4);
-            GArticulo4.Size = new Size(240, 578);
+            GArticulo4.Size = new Size(209, 434);
             GArticulo4.TabIndex = 23;
             GArticulo4.TabStop = false;
             GArticulo4.Text = "Nombre del Articulo";
@@ -1023,10 +967,9 @@
             // 
             PArticulo4.BackColor = Color.Transparent;
             PArticulo4.Dock = DockStyle.Fill;
-            PArticulo4.Location = new Point(3, 31);
-            PArticulo4.Margin = new Padding(3, 4, 3, 4);
+            PArticulo4.Location = new Point(3, 25);
             PArticulo4.Name = "PArticulo4";
-            PArticulo4.Size = new Size(234, 272);
+            PArticulo4.Size = new Size(203, 202);
             PArticulo4.SizeMode = PictureBoxSizeMode.StretchImage;
             PArticulo4.TabIndex = 0;
             PArticulo4.TabStop = false;
@@ -1035,9 +978,9 @@
             // 
             LArticulo4.BackColor = Color.Silver;
             LArticulo4.Dock = DockStyle.Bottom;
-            LArticulo4.Location = new Point(3, 303);
+            LArticulo4.Location = new Point(3, 227);
             LArticulo4.Name = "LArticulo4";
-            LArticulo4.Size = new Size(234, 189);
+            LArticulo4.Size = new Size(203, 142);
             LArticulo4.TabIndex = 1;
             LArticulo4.Text = "Descripcion";
             // 
@@ -1046,30 +989,27 @@
             PPrecio4.Controls.Add(TCantidad4);
             PPrecio4.Controls.Add(TPrecio4);
             PPrecio4.Dock = DockStyle.Bottom;
-            PPrecio4.Location = new Point(3, 492);
-            PPrecio4.Margin = new Padding(3, 4, 3, 4);
+            PPrecio4.Location = new Point(3, 369);
             PPrecio4.Name = "PPrecio4";
-            PPrecio4.Size = new Size(234, 37);
+            PPrecio4.Size = new Size(203, 28);
             PPrecio4.TabIndex = 18;
             // 
             // TCantidad4
             // 
             TCantidad4.Dock = DockStyle.Fill;
-            TCantidad4.Location = new Point(175, 0);
-            TCantidad4.Margin = new Padding(3, 4, 3, 4);
+            TCantidad4.Location = new Point(154, 0);
             TCantidad4.Name = "TCantidad4";
             TCantidad4.ReadOnly = true;
-            TCantidad4.Size = new Size(59, 34);
+            TCantidad4.Size = new Size(49, 29);
             TCantidad4.TabIndex = 16;
             // 
             // TPrecio4
             // 
             TPrecio4.Dock = DockStyle.Left;
             TPrecio4.Location = new Point(0, 0);
-            TPrecio4.Margin = new Padding(3, 4, 3, 4);
             TPrecio4.Name = "TPrecio4";
             TPrecio4.ReadOnly = true;
-            TPrecio4.Size = new Size(175, 34);
+            TPrecio4.Size = new Size(154, 29);
             TPrecio4.TabIndex = 15;
             // 
             // PArt_Agre4
@@ -1078,20 +1018,18 @@
             PArt_Agre4.Controls.Add(NArt4);
             PArt_Agre4.Controls.Add(BAnadir4);
             PArt_Agre4.Dock = DockStyle.Bottom;
-            PArt_Agre4.Location = new Point(3, 529);
-            PArt_Agre4.Margin = new Padding(3, 4, 3, 4);
+            PArt_Agre4.Location = new Point(3, 397);
             PArt_Agre4.Name = "PArt_Agre4";
-            PArt_Agre4.Size = new Size(234, 45);
+            PArt_Agre4.Size = new Size(203, 34);
             PArt_Agre4.TabIndex = 14;
             // 
             // NArt4
             // 
             NArt4.Dock = DockStyle.Fill;
             NArt4.Font = new Font("Palatino Linotype", 15F, FontStyle.Italic);
-            NArt4.Location = new Point(109, 0);
-            NArt4.Margin = new Padding(3, 4, 3, 4);
+            NArt4.Location = new Point(95, 0);
             NArt4.Name = "NArt4";
-            NArt4.Size = new Size(125, 41);
+            NArt4.Size = new Size(108, 34);
             NArt4.TabIndex = 0;
             // 
             // BAnadir4
@@ -1099,9 +1037,8 @@
             BAnadir4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BAnadir4.Dock = DockStyle.Left;
             BAnadir4.Location = new Point(0, 0);
-            BAnadir4.Margin = new Padding(3, 4, 3, 4);
             BAnadir4.Name = "BAnadir4";
-            BAnadir4.Size = new Size(109, 45);
+            BAnadir4.Size = new Size(95, 34);
             BAnadir4.TabIndex = 1;
             BAnadir4.Text = "Anadir";
             BAnadir4.UseVisualStyleBackColor = true;
@@ -1117,11 +1054,9 @@
             GArticulo3.Controls.Add(PArt_Agre3);
             GArticulo3.Dock = DockStyle.Fill;
             GArticulo3.Font = new Font("Palatino Linotype", 12F, FontStyle.Italic);
-            GArticulo3.Location = new Point(167, 590);
-            GArticulo3.Margin = new Padding(3, 4, 3, 4);
+            GArticulo3.Location = new Point(146, 443);
             GArticulo3.Name = "GArticulo3";
-            GArticulo3.Padding = new Padding(3, 4, 3, 4);
-            GArticulo3.Size = new Size(240, 578);
+            GArticulo3.Size = new Size(209, 434);
             GArticulo3.TabIndex = 22;
             GArticulo3.TabStop = false;
             GArticulo3.Text = "Nombre del Articulo";
@@ -1130,10 +1065,9 @@
             // 
             PArticulo3.BackColor = Color.Transparent;
             PArticulo3.Dock = DockStyle.Fill;
-            PArticulo3.Location = new Point(3, 31);
-            PArticulo3.Margin = new Padding(3, 4, 3, 4);
+            PArticulo3.Location = new Point(3, 25);
             PArticulo3.Name = "PArticulo3";
-            PArticulo3.Size = new Size(234, 272);
+            PArticulo3.Size = new Size(203, 202);
             PArticulo3.SizeMode = PictureBoxSizeMode.StretchImage;
             PArticulo3.TabIndex = 0;
             PArticulo3.TabStop = false;
@@ -1142,9 +1076,9 @@
             // 
             LArticulo3.BackColor = Color.Silver;
             LArticulo3.Dock = DockStyle.Bottom;
-            LArticulo3.Location = new Point(3, 303);
+            LArticulo3.Location = new Point(3, 227);
             LArticulo3.Name = "LArticulo3";
-            LArticulo3.Size = new Size(234, 189);
+            LArticulo3.Size = new Size(203, 142);
             LArticulo3.TabIndex = 1;
             LArticulo3.Text = "Descripcion";
             // 
@@ -1153,30 +1087,27 @@
             PPrecio3.Controls.Add(TCantidad3);
             PPrecio3.Controls.Add(TPrecio3);
             PPrecio3.Dock = DockStyle.Bottom;
-            PPrecio3.Location = new Point(3, 492);
-            PPrecio3.Margin = new Padding(3, 4, 3, 4);
+            PPrecio3.Location = new Point(3, 369);
             PPrecio3.Name = "PPrecio3";
-            PPrecio3.Size = new Size(234, 37);
+            PPrecio3.Size = new Size(203, 28);
             PPrecio3.TabIndex = 18;
             // 
             // TCantidad3
             // 
             TCantidad3.Dock = DockStyle.Fill;
-            TCantidad3.Location = new Point(175, 0);
-            TCantidad3.Margin = new Padding(3, 4, 3, 4);
+            TCantidad3.Location = new Point(154, 0);
             TCantidad3.Name = "TCantidad3";
             TCantidad3.ReadOnly = true;
-            TCantidad3.Size = new Size(59, 34);
+            TCantidad3.Size = new Size(49, 29);
             TCantidad3.TabIndex = 16;
             // 
             // TPrecio3
             // 
             TPrecio3.Dock = DockStyle.Left;
             TPrecio3.Location = new Point(0, 0);
-            TPrecio3.Margin = new Padding(3, 4, 3, 4);
             TPrecio3.Name = "TPrecio3";
             TPrecio3.ReadOnly = true;
-            TPrecio3.Size = new Size(175, 34);
+            TPrecio3.Size = new Size(154, 29);
             TPrecio3.TabIndex = 15;
             // 
             // PArt_Agre3
@@ -1185,20 +1116,18 @@
             PArt_Agre3.Controls.Add(NArt3);
             PArt_Agre3.Controls.Add(BAnadir3);
             PArt_Agre3.Dock = DockStyle.Bottom;
-            PArt_Agre3.Location = new Point(3, 529);
-            PArt_Agre3.Margin = new Padding(3, 4, 3, 4);
+            PArt_Agre3.Location = new Point(3, 397);
             PArt_Agre3.Name = "PArt_Agre3";
-            PArt_Agre3.Size = new Size(234, 45);
+            PArt_Agre3.Size = new Size(203, 34);
             PArt_Agre3.TabIndex = 14;
             // 
             // NArt3
             // 
             NArt3.Dock = DockStyle.Fill;
             NArt3.Font = new Font("Palatino Linotype", 15F, FontStyle.Italic);
-            NArt3.Location = new Point(109, 0);
-            NArt3.Margin = new Padding(3, 4, 3, 4);
+            NArt3.Location = new Point(95, 0);
             NArt3.Name = "NArt3";
-            NArt3.Size = new Size(125, 41);
+            NArt3.Size = new Size(108, 34);
             NArt3.TabIndex = 0;
             // 
             // BAnadir3
@@ -1206,9 +1135,8 @@
             BAnadir3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BAnadir3.Dock = DockStyle.Left;
             BAnadir3.Location = new Point(0, 0);
-            BAnadir3.Margin = new Padding(3, 4, 3, 4);
             BAnadir3.Name = "BAnadir3";
-            BAnadir3.Size = new Size(109, 45);
+            BAnadir3.Size = new Size(95, 34);
             BAnadir3.TabIndex = 1;
             BAnadir3.Text = "Anadir";
             BAnadir3.UseVisualStyleBackColor = true;
@@ -1224,11 +1152,9 @@
             GArticulo2.Controls.Add(PArt_Agre2);
             GArticulo2.Dock = DockStyle.Fill;
             GArticulo2.Font = new Font("Palatino Linotype", 12F, FontStyle.Italic);
-            GArticulo2.Location = new Point(413, 4);
-            GArticulo2.Margin = new Padding(3, 4, 3, 4);
+            GArticulo2.Location = new Point(361, 3);
             GArticulo2.Name = "GArticulo2";
-            GArticulo2.Padding = new Padding(3, 4, 3, 4);
-            GArticulo2.Size = new Size(240, 578);
+            GArticulo2.Size = new Size(209, 434);
             GArticulo2.TabIndex = 21;
             GArticulo2.TabStop = false;
             GArticulo2.Text = "Nombre del Articulo";
@@ -1237,10 +1163,9 @@
             // 
             PArticulo2.BackColor = Color.Transparent;
             PArticulo2.Dock = DockStyle.Fill;
-            PArticulo2.Location = new Point(3, 31);
-            PArticulo2.Margin = new Padding(3, 4, 3, 4);
+            PArticulo2.Location = new Point(3, 25);
             PArticulo2.Name = "PArticulo2";
-            PArticulo2.Size = new Size(234, 272);
+            PArticulo2.Size = new Size(203, 202);
             PArticulo2.SizeMode = PictureBoxSizeMode.StretchImage;
             PArticulo2.TabIndex = 0;
             PArticulo2.TabStop = false;
@@ -1249,9 +1174,9 @@
             // 
             LArticulo2.BackColor = Color.Silver;
             LArticulo2.Dock = DockStyle.Bottom;
-            LArticulo2.Location = new Point(3, 303);
+            LArticulo2.Location = new Point(3, 227);
             LArticulo2.Name = "LArticulo2";
-            LArticulo2.Size = new Size(234, 189);
+            LArticulo2.Size = new Size(203, 142);
             LArticulo2.TabIndex = 1;
             LArticulo2.Text = "Descripcion";
             // 
@@ -1260,30 +1185,27 @@
             PPrecio2.Controls.Add(TCantidad2);
             PPrecio2.Controls.Add(TPrecio2);
             PPrecio2.Dock = DockStyle.Bottom;
-            PPrecio2.Location = new Point(3, 492);
-            PPrecio2.Margin = new Padding(3, 4, 3, 4);
+            PPrecio2.Location = new Point(3, 369);
             PPrecio2.Name = "PPrecio2";
-            PPrecio2.Size = new Size(234, 37);
+            PPrecio2.Size = new Size(203, 28);
             PPrecio2.TabIndex = 18;
             // 
             // TCantidad2
             // 
             TCantidad2.Dock = DockStyle.Fill;
-            TCantidad2.Location = new Point(175, 0);
-            TCantidad2.Margin = new Padding(3, 4, 3, 4);
+            TCantidad2.Location = new Point(154, 0);
             TCantidad2.Name = "TCantidad2";
             TCantidad2.ReadOnly = true;
-            TCantidad2.Size = new Size(59, 34);
+            TCantidad2.Size = new Size(49, 29);
             TCantidad2.TabIndex = 16;
             // 
             // TPrecio2
             // 
             TPrecio2.Dock = DockStyle.Left;
             TPrecio2.Location = new Point(0, 0);
-            TPrecio2.Margin = new Padding(3, 4, 3, 4);
             TPrecio2.Name = "TPrecio2";
             TPrecio2.ReadOnly = true;
-            TPrecio2.Size = new Size(175, 34);
+            TPrecio2.Size = new Size(154, 29);
             TPrecio2.TabIndex = 15;
             // 
             // PArt_Agre2
@@ -1292,20 +1214,18 @@
             PArt_Agre2.Controls.Add(NArt2);
             PArt_Agre2.Controls.Add(BAnadir2);
             PArt_Agre2.Dock = DockStyle.Bottom;
-            PArt_Agre2.Location = new Point(3, 529);
-            PArt_Agre2.Margin = new Padding(3, 4, 3, 4);
+            PArt_Agre2.Location = new Point(3, 397);
             PArt_Agre2.Name = "PArt_Agre2";
-            PArt_Agre2.Size = new Size(234, 45);
+            PArt_Agre2.Size = new Size(203, 34);
             PArt_Agre2.TabIndex = 14;
             // 
             // NArt2
             // 
             NArt2.Dock = DockStyle.Fill;
             NArt2.Font = new Font("Palatino Linotype", 15F, FontStyle.Italic);
-            NArt2.Location = new Point(109, 0);
-            NArt2.Margin = new Padding(3, 4, 3, 4);
+            NArt2.Location = new Point(95, 0);
             NArt2.Name = "NArt2";
-            NArt2.Size = new Size(125, 41);
+            NArt2.Size = new Size(108, 34);
             NArt2.TabIndex = 0;
             // 
             // BAnadir2
@@ -1313,9 +1233,8 @@
             BAnadir2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BAnadir2.Dock = DockStyle.Left;
             BAnadir2.Location = new Point(0, 0);
-            BAnadir2.Margin = new Padding(3, 4, 3, 4);
             BAnadir2.Name = "BAnadir2";
-            BAnadir2.Size = new Size(109, 45);
+            BAnadir2.Size = new Size(95, 34);
             BAnadir2.TabIndex = 1;
             BAnadir2.Text = "Anadir";
             BAnadir2.UseVisualStyleBackColor = true;
@@ -1331,11 +1250,9 @@
             GArticulo1.Controls.Add(PArt_Agre1);
             GArticulo1.Dock = DockStyle.Fill;
             GArticulo1.Font = new Font("Palatino Linotype", 12F, FontStyle.Italic);
-            GArticulo1.Location = new Point(167, 4);
-            GArticulo1.Margin = new Padding(3, 4, 3, 4);
+            GArticulo1.Location = new Point(146, 3);
             GArticulo1.Name = "GArticulo1";
-            GArticulo1.Padding = new Padding(3, 4, 3, 4);
-            GArticulo1.Size = new Size(240, 578);
+            GArticulo1.Size = new Size(209, 434);
             GArticulo1.TabIndex = 20;
             GArticulo1.TabStop = false;
             GArticulo1.Text = "Nombre del Articulo";
@@ -1344,10 +1261,9 @@
             // 
             PArticulo1.BackColor = Color.Transparent;
             PArticulo1.Dock = DockStyle.Fill;
-            PArticulo1.Location = new Point(3, 31);
-            PArticulo1.Margin = new Padding(3, 4, 3, 4);
+            PArticulo1.Location = new Point(3, 25);
             PArticulo1.Name = "PArticulo1";
-            PArticulo1.Size = new Size(234, 272);
+            PArticulo1.Size = new Size(203, 202);
             PArticulo1.SizeMode = PictureBoxSizeMode.StretchImage;
             PArticulo1.TabIndex = 0;
             PArticulo1.TabStop = false;
@@ -1356,9 +1272,9 @@
             // 
             LArticulo1.BackColor = Color.Silver;
             LArticulo1.Dock = DockStyle.Bottom;
-            LArticulo1.Location = new Point(3, 303);
+            LArticulo1.Location = new Point(3, 227);
             LArticulo1.Name = "LArticulo1";
-            LArticulo1.Size = new Size(234, 189);
+            LArticulo1.Size = new Size(203, 142);
             LArticulo1.TabIndex = 1;
             LArticulo1.Text = "Descripcion";
             // 
@@ -1367,30 +1283,27 @@
             PPrecio1.Controls.Add(TCantidad1);
             PPrecio1.Controls.Add(TPrecio1);
             PPrecio1.Dock = DockStyle.Bottom;
-            PPrecio1.Location = new Point(3, 492);
-            PPrecio1.Margin = new Padding(3, 4, 3, 4);
+            PPrecio1.Location = new Point(3, 369);
             PPrecio1.Name = "PPrecio1";
-            PPrecio1.Size = new Size(234, 37);
+            PPrecio1.Size = new Size(203, 28);
             PPrecio1.TabIndex = 17;
             // 
             // TCantidad1
             // 
             TCantidad1.Dock = DockStyle.Fill;
-            TCantidad1.Location = new Point(175, 0);
-            TCantidad1.Margin = new Padding(3, 4, 3, 4);
+            TCantidad1.Location = new Point(154, 0);
             TCantidad1.Name = "TCantidad1";
             TCantidad1.ReadOnly = true;
-            TCantidad1.Size = new Size(59, 34);
+            TCantidad1.Size = new Size(49, 29);
             TCantidad1.TabIndex = 16;
             // 
             // TPrecio1
             // 
             TPrecio1.Dock = DockStyle.Left;
             TPrecio1.Location = new Point(0, 0);
-            TPrecio1.Margin = new Padding(3, 4, 3, 4);
             TPrecio1.Name = "TPrecio1";
             TPrecio1.ReadOnly = true;
-            TPrecio1.Size = new Size(175, 34);
+            TPrecio1.Size = new Size(154, 29);
             TPrecio1.TabIndex = 15;
             // 
             // PArt_Agre1
@@ -1399,20 +1312,18 @@
             PArt_Agre1.Controls.Add(NArt1);
             PArt_Agre1.Controls.Add(BAnadir1);
             PArt_Agre1.Dock = DockStyle.Bottom;
-            PArt_Agre1.Location = new Point(3, 529);
-            PArt_Agre1.Margin = new Padding(3, 4, 3, 4);
+            PArt_Agre1.Location = new Point(3, 397);
             PArt_Agre1.Name = "PArt_Agre1";
-            PArt_Agre1.Size = new Size(234, 45);
+            PArt_Agre1.Size = new Size(203, 34);
             PArt_Agre1.TabIndex = 14;
             // 
             // NArt1
             // 
             NArt1.Dock = DockStyle.Fill;
             NArt1.Font = new Font("Palatino Linotype", 15F, FontStyle.Italic);
-            NArt1.Location = new Point(109, 0);
-            NArt1.Margin = new Padding(3, 4, 3, 4);
+            NArt1.Location = new Point(95, 0);
             NArt1.Name = "NArt1";
-            NArt1.Size = new Size(125, 41);
+            NArt1.Size = new Size(108, 34);
             NArt1.TabIndex = 0;
             // 
             // BAnadir1
@@ -1420,9 +1331,8 @@
             BAnadir1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BAnadir1.Dock = DockStyle.Left;
             BAnadir1.Location = new Point(0, 0);
-            BAnadir1.Margin = new Padding(3, 4, 3, 4);
             BAnadir1.Name = "BAnadir1";
-            BAnadir1.Size = new Size(109, 45);
+            BAnadir1.Size = new Size(95, 34);
             BAnadir1.TabIndex = 1;
             BAnadir1.Text = "Anadir";
             BAnadir1.UseVisualStyleBackColor = true;
@@ -1431,9 +1341,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(65, 25);
+            label1.Location = new Point(57, 19);
             label1.Name = "label1";
-            label1.Size = new Size(0, 20);
+            label1.Size = new Size(0, 15);
             label1.TabIndex = 10;
             // 
             // GPanel
@@ -1450,10 +1360,8 @@
             GPanel.Font = new Font("Palatino Linotype", 21.75F, FontStyle.Italic);
             GPanel.ForeColor = SystemColors.ActiveCaptionText;
             GPanel.Location = new Point(0, 0);
-            GPanel.Margin = new Padding(3, 4, 3, 4);
             GPanel.Name = "GPanel";
-            GPanel.Padding = new Padding(3, 4, 3, 4);
-            GPanel.Size = new Size(323, 1000);
+            GPanel.Size = new Size(284, 553);
             GPanel.TabIndex = 14;
             GPanel.TabStop = false;
             GPanel.Enter += GPanel_Enter;
@@ -1463,10 +1371,9 @@
             BLog_Out.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             BLog_Out.BackColor = Color.Tomato;
             BLog_Out.Font = new Font("Palatino Linotype", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            BLog_Out.Location = new Point(77, 929);
-            BLog_Out.Margin = new Padding(3, 4, 3, 4);
+            BLog_Out.Location = new Point(67, 500);
             BLog_Out.Name = "BLog_Out";
-            BLog_Out.Size = new Size(152, 53);
+            BLog_Out.Size = new Size(134, 40);
             BLog_Out.TabIndex = 11;
             BLog_Out.Text = "Log Out";
             BLog_Out.UseVisualStyleBackColor = false;
@@ -1478,20 +1385,19 @@
             RTotalMImp.BackColor = Color.White;
             RTotalMImp.Font = new Font("Palatino Linotype", 18F, FontStyle.Italic);
             RTotalMImp.ForeColor = SystemColors.Desktop;
-            RTotalMImp.Location = new Point(65, 547);
-            RTotalMImp.Margin = new Padding(3, 4, 3, 4);
+            RTotalMImp.Location = new Point(58, 311);
             RTotalMImp.Name = "RTotalMImp";
             RTotalMImp.ReadOnly = true;
-            RTotalMImp.Size = new Size(219, 48);
+            RTotalMImp.Size = new Size(192, 40);
             RTotalMImp.TabIndex = 18;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Location = new Point(65, 492);
+            label2.Location = new Point(58, 270);
             label2.Name = "label2";
-            label2.Size = new Size(346, 51);
+            label2.Size = new Size(274, 39);
             label2.TabIndex = 17;
             label2.Text = "Total(Con Impuestos)";
             // 
@@ -1501,11 +1407,10 @@
             RTotal.BackColor = Color.White;
             RTotal.Font = new Font("Palatino Linotype", 18F, FontStyle.Italic);
             RTotal.ForeColor = SystemColors.Desktop;
-            RTotal.Location = new Point(65, 440);
-            RTotal.Margin = new Padding(3, 4, 3, 4);
+            RTotal.Location = new Point(58, 231);
             RTotal.Name = "RTotal";
             RTotal.ReadOnly = true;
-            RTotal.Size = new Size(219, 48);
+            RTotal.Size = new Size(192, 40);
             RTotal.TabIndex = 15;
             RTotal.TextChanged += RTotal_TextChanged;
             // 
@@ -1513,9 +1418,9 @@
             // 
             Ltotal.Anchor = AnchorStyles.None;
             Ltotal.AutoSize = true;
-            Ltotal.Location = new Point(65, 385);
+            Ltotal.Location = new Point(58, 190);
             Ltotal.Name = "Ltotal";
-            Ltotal.Size = new Size(147, 51);
+            Ltotal.Size = new Size(117, 39);
             Ltotal.TabIndex = 14;
             Ltotal.Text = "Subtotal";
             // 
@@ -1525,10 +1430,9 @@
             BCompra.BackColor = Color.Gold;
             BCompra.Font = new Font("Palatino Linotype", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
             BCompra.ForeColor = SystemColors.ActiveCaptionText;
-            BCompra.Location = new Point(31, 804);
-            BCompra.Margin = new Padding(3, 4, 3, 4);
+            BCompra.Location = new Point(27, 406);
             BCompra.Name = "BCompra";
-            BCompra.Size = new Size(253, 105);
+            BCompra.Size = new Size(222, 79);
             BCompra.TabIndex = 13;
             BCompra.Text = "Realizar Compra";
             BCompra.UseVisualStyleBackColor = false;
@@ -1539,10 +1443,9 @@
             BCarrito.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             BCarrito.Font = new Font("Palatino Linotype", 18F, FontStyle.Italic, GraphicsUnit.Point, 0);
             BCarrito.ForeColor = SystemColors.ActiveCaptionText;
-            BCarrito.Location = new Point(31, 696);
-            BCarrito.Margin = new Padding(3, 4, 3, 4);
+            BCarrito.Location = new Point(27, 325);
             BCarrito.Name = "BCarrito";
-            BCarrito.Size = new Size(254, 100);
+            BCarrito.Size = new Size(223, 75);
             BCarrito.TabIndex = 12;
             BCarrito.Text = "Carrito";
             BCarrito.UseVisualStyleBackColor = true;
@@ -1552,9 +1455,10 @@
             // 
             PLogo.Anchor = AnchorStyles.Top;
             PLogo.Image = Punto_de_Venta.Properties.Resources.Fragannislogo;
-            PLogo.Location = new Point(34, 53);
+            PLogo.Location = new Point(31, 40);
+            PLogo.Margin = new Padding(3, 2, 3, 2);
             PLogo.Name = "PLogo";
-            PLogo.Size = new Size(299, 300);
+            PLogo.Size = new Size(262, 225);
             PLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             PLogo.TabIndex = 16;
             PLogo.TabStop = false;
@@ -1565,18 +1469,17 @@
             // 
             // Usuario
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RosyBrown;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1170, 1051);
+            ClientSize = new Size(1024, 591);
             ControlBox = false;
             Controls.Add(SUsuario);
             Controls.Add(TPanel);
             FormBorderStyle = FormBorderStyle.None;
             HelpButton = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Usuario";
             StartPosition = FormStartPosition.CenterScreen;
             WindowState = FormWindowState.Maximized;

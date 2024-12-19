@@ -154,9 +154,12 @@ namespace BaseDatos
                 string imagen = !string.IsNullOrEmpty(TImagen.Text) ? TImagen.Text : null;
 
                 bool success = dbConnection.ModificarProducto(id, nombre, precio, existencias, descripcion, imagen);
+                
 
                 if (success)
                 {
+                    // Llamar al método para ordenar los productos por existencias en orden descendente
+                     dbConnection.OrdenarPorExistenciasDescendente();
                     MessageBox.Show("Producto modificado exitosamente.");
                 }
                 else
@@ -164,8 +167,7 @@ namespace BaseDatos
                     MessageBox.Show("Error al modificar el producto. Inténtalo nuevamente.");
                 }
 
-                // Llamar al método para ordenar los productos por existencias en orden descendente
-                dbConnection.OrdenarPorExistenciasDescendente();
+                
 
             }
             else
@@ -199,6 +201,8 @@ namespace BaseDatos
 
                 if (success)
                 {
+                    // Llamar al método para ordenar los productos por existencias en orden descendente
+                    dbConnection.OrdenarPorExistenciasDescendente();
                     MessageBox.Show("Producto agregado exitosamente.");
                 }
                 else
@@ -206,8 +210,7 @@ namespace BaseDatos
                     MessageBox.Show("Error al agregar el producto. Inténtalo nuevamente.");
                 }
 
-                // Llamar al método para ordenar los productos por existencias en orden descendente
-                dbConnection.OrdenarPorExistenciasDescendente();
+                
             }
             else
             {
@@ -247,15 +250,14 @@ namespace BaseDatos
                 bool success = dbConnection.EliminarProducto(Convert.ToInt32(TId.Text));
                 if (success)
                 {
+                    // Llamar al método para ordenar los productos por existencias en orden descendente
+                    dbConnection.OrdenarPorExistenciasDescendente();
                     MessageBox.Show("Producto eliminado exitosamente.");
                 }
                 else
                 {
                     MessageBox.Show("Error al eliminar el producto. Inténtalo nuevamente.");
                 }
-
-                // Llamar al método para ordenar los productos por existencias en orden descendente
-                dbConnection.OrdenarPorExistenciasDescendente();
             }
             else
             {
@@ -296,6 +298,8 @@ namespace BaseDatos
         public void VerRegistros()
         {
             DataTable dt = dbConnection.VerRegistros();
+            // Llamar al método para ordenar los productos por existencias en orden descendente
+            dbConnection.OrdenarPorExistenciasDescendente();
             TablaDatos.Rows.Clear(); // Limpiar DataGridView antes de llenarlo
 
             foreach (DataRow row in dt.Rows)
@@ -325,6 +329,8 @@ namespace BaseDatos
 
         private void B_Salir(object sender, EventArgs e)
         {
+            // Llamar al método para ordenar los productos por existencias en orden descendente
+            dbConnection.OrdenarPorExistenciasDescendente();
             this.Close();
         }
     }

@@ -39,7 +39,7 @@ namespace BaseDatos
         public void RestarExistencias(int articuloId, int cantidad)
         {
             OpenConnection();
-            MySqlCommand cmd = new MySqlCommand("UPDATE productos SET Existencias = Existencias - @Cantidad WHERE ID = @ID", connection);
+            MySqlCommand cmd = new MySqlCommand("UPDATE productos SET Existencias = Existencias - @Cantidad WHERE ID = @ID ORDER BY Existencias DESC", connection);
             cmd.Parameters.AddWithValue("@Cantidad", cantidad);
             cmd.Parameters.AddWithValue("@ID", articuloId);
 
@@ -61,7 +61,7 @@ namespace BaseDatos
         private bool ProductoExiste(int id)
         {
             OpenConnection();
-            MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM productos WHERE ID = @ID", connection);
+            MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM productos WHERE ID = @ID ORDER BY Existencias DESC", connection);
             cmd.Parameters.AddWithValue("@ID", id);
 
             try
@@ -112,7 +112,7 @@ namespace BaseDatos
             }
 
             OpenConnection();
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO productos (ID, Nombre, Precio, Existencias, Descripcion , Imagen) VALUES (@ID, @Nombre, @Precio, @Existencias, @Descripcion, @Imagen)", connection);
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO productos (ID, Nombre, Precio, Existencias, Descripcion , Imagen) VALUES (@ID, @Nombre, @Precio, @Existencias, @Descripcion, @Imagen)  ORDER BY Existencias DESC", connection);
             cmd.Parameters.AddWithValue("@ID", id);
             cmd.Parameters.AddWithValue("@Nombre", nombre);
             cmd.Parameters.AddWithValue("@Precio", precio);
@@ -146,7 +146,7 @@ namespace BaseDatos
             }
 
             OpenConnection();
-            MySqlCommand cmd = new MySqlCommand("DELETE FROM productos WHERE ID = @ID", connection);
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM productos WHERE ID = @ID ORDER BY Existencias DESC", connection);
             cmd.Parameters.AddWithValue("@ID", id);
 
             try
@@ -178,7 +178,7 @@ namespace BaseDatos
             if (!string.IsNullOrEmpty(descripcion)) query += "Descripcion = @Descripcion, ";
             if (!string.IsNullOrEmpty(imagen)) query += "Imagen = @Imagen, ";
             query = query.TrimEnd(' ', ',');
-            query += " WHERE ID = @ID";
+            query += " WHERE ID = @ID ORDER BY Existencias DESC";
 
             MySqlCommand cmd = new MySqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@ID", id);
@@ -209,7 +209,7 @@ namespace BaseDatos
         {
             DataTable dt = new DataTable();
             OpenConnection();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM productos", connection);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM productos ORDER BY Existencias DESC", connection);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
 
             try
@@ -231,27 +231,23 @@ namespace BaseDatos
         public DataTable OrdenarPorExistenciasDescendente()
         {
             DataTable dt = new DataTable();
-            OpenConnection();
 
-            // Consulta SQL para ordenar por Existencias de manera descendente
+            OpenConnection(); // Asegúrate de que la conexión esté abierta
+
+            // Consulta SQL para seleccionar todos los productos ordenados por existencias de forma descendente
             string query = "SELECT * FROM productos ORDER BY Existencias DESC";
-            MySqlCommand cmd = new MySqlCommand(query, connection);
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
 
-            try
+            using (MySqlCommand cmd = new MySqlCommand(query, connection))
             {
-                adapter.Fill(dt);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al ordenar los productos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                CloseConnection();
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                {
+                    adapter.Fill(dt); // Llenamos el DataTable con los productos ordenados
+                }
             }
 
-            return dt;
+            CloseConnection(); // Asegúrate de cerrar la conexión
+
+            return dt; // Retorna los datos ordenados
         }
 
 

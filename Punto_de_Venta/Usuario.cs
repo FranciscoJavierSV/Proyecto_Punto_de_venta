@@ -132,8 +132,8 @@ namespace example
             {
                 // Crear una instancia del formulario de destino y pasarle el carrito como parámetro
                 FCompra formCompra = new FCompra(carrito);
-                formCompra.Show();
                 formCompra.FormClosed += Menu_cerrado;
+                formCompra.Show();
             }
             else
             {
@@ -143,8 +143,15 @@ namespace example
 
         private void Menu_cerrado(object sender, FormClosedEventArgs e)
         {
+            var formCompra = sender as FCompra;
+            if (formCompra != null && formCompra.OperacionCompletada)
+            {
+                RTotal.Text = string.Empty;
+                RTotalMImp.Text = string.Empty;
+            }
             CargarProductos();
         }
+
 
         private void Clic_Aceptar(object sender, EventArgs e)
         {
@@ -200,7 +207,7 @@ namespace example
         }
         private void ActualizarTotalConImpuestos()
         {
-            decimal sumaTotal = carrito.ObtenerTotal() - 0.06m;
+            decimal sumaTotal = carrito.ObtenerTotal();
             RTotalMImp.Text = $"Total: {sumaTotal*1.06m:C}";  // Actualizar el RichTextBox con el total
         }
 
@@ -233,6 +240,7 @@ namespace example
             if (formCarrito.ShowDialog() == DialogResult.OK || formCarrito.DialogResult == DialogResult.Cancel)
             {
                 ActualizarTotal(); // Actualizar el total después de cerrar el carrito
+                ActualizarTotalConImpuestos();
             }
 
 
