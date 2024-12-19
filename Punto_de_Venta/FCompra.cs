@@ -78,10 +78,6 @@ namespace Punto_de_Venta
                     // Cargar el contenido de la plantilla HTML desde recursos
                     string paginahtml_texto = Properties.Resources.plantilla.ToString();
 
-                    // Reemplazar las variables en el HTML con los valores correspondientes
-                    paginahtml_texto = paginahtml_texto.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yyyy"));
-                    paginahtml_texto = paginahtml_texto.Replace("@TOTAL", carrito.ObtenerTotal().ToString("C"));
-
                     // Generar las filas para la tabla de artículos
                     string filas = "";
                     foreach (var articulo in carrito.ObtenerArticulos())
@@ -113,9 +109,7 @@ namespace Punto_de_Venta
                                 img.Alignment = iTextSharp.text.Image.UNDERLYING;
                                 img.SetAbsolutePosition(document.LeftMargin, document.Top - 60);
                                 document.Add(img);
-                                using (StringReader sr = new StringReader(paginahtml_texto))
-                                {
-                                    try
+                                using (StringReader sr = new StringReader(paginaHtml_texto))
                                     {
                                         XMLWorkerHelper.GetInstance().ParseXHtml(pdfw, document, sr);
                                     }
